@@ -150,10 +150,23 @@ code {
   text-decoration: none;
 }
 
-.nav__gh {
-  padding: 6px 14px;
+.icon-link {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--border);
   border-radius: 999px;
+  color: var(--text-body);
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.icon-link:hover {
+  border-color: var(--violet);
+  color: var(--text);
+  text-decoration: none;
 }
 
 .nav__lang {
@@ -532,6 +545,13 @@ code {
   margin: 0;
 }
 
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
 .footer__legal {
   margin-top: 8px !important;
   font-size: 13px;
@@ -577,7 +597,6 @@ code {
     display: none;
   }
 
-  .nav__gh,
   .nav__lang {
     padding: 5px 10px;
   }
