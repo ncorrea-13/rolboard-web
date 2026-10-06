@@ -42,10 +42,7 @@ Cloudflare Pages conectado a este repo: sin comando de build, directorio de sali
 
 ## Descargas
 
-Los botones apuntan a `releases/latest/download/<archivo>` del repo de Rolboard, así que el workflow de release tiene que publicar los assets con estos nombres exactos:
-
-- `rolboard-windows-amd64.exe`
-- `rolboard-linux-x86_64.AppImage`
+Los botones de descarga leen las URLs de los assets del último release de Rolboard desde la API de GitHub, buscando `windows-amd64*.exe` y `linux-x86_64*.AppImage` (los assets se llaman, por ejemplo, `rolboard-windows-amd64-v0.1.1.exe`). Si la API no responde, enlazan a la página del último release. La misma consulta muestra la versión actual.
 
 La página detecta el sistema operativo del visitante y resalta la descarga que corresponde.
 

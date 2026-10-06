@@ -425,7 +425,7 @@
             <p class="dl__meta">Windows 10 / 11 · 64 bits · .exe</p>
             <a
               class="btn btn--primary"
-              href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-windows-amd64.exe"
+              href="https://github.com/ncorrea-13/rolboard/releases/latest"
               data-i18n="dl.win.btn"
               >Descargar para Windows</a
             >
@@ -439,7 +439,7 @@
             <p class="dl__meta">x86_64 · AppImage</p>
             <a
               class="btn btn--primary"
-              href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-linux-x86_64.AppImage"
+              href="https://github.com/ncorrea-13/rolboard/releases/latest"
               data-i18n="dl.linux.btn"
               >Descargar para Linux</a
             >
@@ -658,10 +658,10 @@
           ? "linux"
           : null;
       const card = os && document.querySelector(`.dl[data-os="${os}"]`);
+      const cta = document.getElementById("cta-download");
       if (card) {
         card.classList.add("dl--recommended");
         const btn = card.querySelector("a");
-        const cta = document.getElementById("cta-download");
         cta.href = btn.href;
         cta.dataset.i18n = btn.dataset.i18n;
       }
@@ -710,6 +710,17 @@
           if (!release?.tag_name) return;
           document.getElementById("version-tag").textContent = release.tag_name;
           document.getElementById("version").hidden = false;
+          const assets = {
+            windows: /windows-amd64.*\.exe$/,
+            linux: /linux-x86_64.*\.AppImage$/,
+          };
+          for (const [platform, pattern] of Object.entries(assets)) {
+            const asset = release.assets.find((a) => pattern.test(a.name));
+            if (!asset) continue;
+            const btn = document.querySelector(`.dl[data-os="${platform}"] a`);
+            btn.href = asset.browser_download_url;
+            if (platform === os) cta.href = asset.browser_download_url;
+          }
         })
         .catch(() => {});
 
