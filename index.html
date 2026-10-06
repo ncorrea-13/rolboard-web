@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rolboard — Tu campaña de rol, en un solo lugar</title>
+    <title data-i18n="meta.title">
+      Rolboard — Tu campaña de rol, en un solo lugar
+    </title>
     <meta
       name="description"
+      data-i18n-content="meta.description"
       content="Rolboard es un tablero para dirigir campañas de rol de mesa: sesiones, arcos, NPCs, locaciones, facciones, quests y un tracker de combate. Gratis, de código abierto y local."
     />
     <meta property="og:title" content="Rolboard" />
@@ -25,7 +28,12 @@
   </head>
   <body>
     <header class="nav">
-      <a class="nav__brand" href="#top" aria-label="Rolboard, inicio">
+      <a
+        class="nav__brand"
+        href="#top"
+        aria-label="Rolboard, inicio"
+        data-i18n-aria-label="nav.home"
+      >
         <img src="assets/logo-icon.png" alt="" width="40" height="29" />
         <img
           src="assets/logo-wordmark.png"
@@ -34,46 +42,65 @@
           height="43"
         />
       </a>
-      <nav class="nav__links" aria-label="Secciones">
-        <a href="#funciones">Funciones</a>
+      <nav
+        class="nav__links"
+        aria-label="Secciones"
+        data-i18n-aria-label="nav.sections"
+      >
+        <a href="#funciones" data-i18n="nav.features">Funciones</a>
         <a href="#obsidian">Obsidian</a>
-        <a href="#descargar">Descargar</a>
+        <a href="#descargar" data-i18n="nav.download">Descargar</a>
         <a
           class="nav__gh"
           href="https://github.com/ncorrea-13/rolboard"
           rel="noopener"
           >GitHub</a
         >
+        <button
+          class="nav__lang"
+          id="lang-toggle"
+          type="button"
+          lang="en"
+          aria-label="Read in English"
+        >
+          EN
+        </button>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <p class="eyebrow">Para quien dirige la mesa</p>
-        <h1>Tu campaña de rol, <br />en un solo lugar.</h1>
-        <p class="hero__lead">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Para quien dirige la mesa</p>
+        <h1 data-i18n="hero.title">Tu campaña de rol, <br />en un solo lugar.</h1>
+        <p class="hero__lead" data-i18n="hero.lead">
           Sesiones, arcos, NPCs, locaciones, facciones, quests y un tracker de
           combate. Rolboard guarda la historia de tu campaña para que tú te
           ocupes de contarla.
         </p>
         <div class="hero__cta">
-          <a class="btn btn--primary" id="cta-download" href="#descargar"
+          <a
+            class="btn btn--primary"
+            id="cta-download"
+            href="#descargar"
+            data-i18n="hero.cta"
             >Descargar gratis</a
           >
           <a
             class="btn btn--ghost"
             href="https://github.com/ncorrea-13/rolboard"
             rel="noopener"
+            data-i18n="hero.code"
             >Ver el código</a
           >
         </div>
-        <p class="hero__meta">
+        <p class="hero__meta" data-i18n="hero.meta">
           Windows · Linux · Docker — código abierto, licencia MIT
         </p>
         <figure class="shot shot--hero">
           <img
             src="assets/screens/dashboard.jpg"
             alt="Resumen de una campaña en Rolboard: arco actual, última sesión, quests activas y NPCs recientes"
+            data-i18n-alt="shot.dashboard"
             width="1440"
             height="900"
             fetchpriority="high"
@@ -83,16 +110,18 @@
 
       <section class="section" id="funciones">
         <div class="section__head">
-          <p class="eyebrow">Qué hace</p>
-          <h2>Todo lo que necesitas entre sesión y sesión</h2>
+          <p class="eyebrow" data-i18n="features.eyebrow">Qué hace</p>
+          <h2 data-i18n="features.title">
+            Todo lo que necesitas entre sesión y sesión
+          </h2>
         </div>
         <ul class="features">
           <li class="feature">
             <span class="feature__icon feature__icon--violet" aria-hidden="true"
               >✦</span
             >
-            <h3>Arcos y sesiones</h3>
-            <p>
+            <h3 data-i18n="f1.title">Arcos y sesiones</h3>
+            <p data-i18n="f1.text">
               Planifica la próxima sesión, marcala como jugada y anota el
               resumen. Todo queda ordenado en una línea de tiempo por arco.
             </p>
@@ -101,8 +130,8 @@
             <span class="feature__icon feature__icon--flame" aria-hidden="true"
               >☗</span
             >
-            <h3>NPCs con memoria</h3>
-            <p>
+            <h3 data-i18n="f2.title">NPCs con memoria</h3>
+            <p data-i18n="f2.text">
               Tipos propios, estado, ubicación, facción y en qué sesiones
               aparecieron. Encuentras a cualquiera en segundos.
             </p>
@@ -111,8 +140,8 @@
             <span class="feature__icon feature__icon--sky" aria-hidden="true"
               >⌖</span
             >
-            <h3>Tu mundo, en capas</h3>
-            <p>
+            <h3 data-i18n="f3.title">Tu mundo, en capas</h3>
+            <p data-i18n="f3.text">
               Regiones, ciudades y lugares anidados, facciones con sus miembros
               y quests con estado y prioridad.
             </p>
@@ -121,8 +150,8 @@
             <span class="feature__icon feature__icon--rose" aria-hidden="true"
               >⚔</span
             >
-            <h3>Tracker de combate</h3>
-            <p>
+            <h3 data-i18n="f4.title">Tracker de combate</h3>
+            <p data-i18n="f4.text">
               Iniciativa, puntos de vida y turnos rápidos o lentos para PJs,
               NPCs y enemigos genéricos. Sin reglas atadas a ningún sistema.
             </p>
@@ -132,7 +161,7 @@
               >❖</span
             >
             <h3>Wardails</h3>
-            <p>
+            <p data-i18n="f5.text">
               Los temas sensibles de la mesa, escritos una vez y siempre a la
               vista cuando juegas la sesión.
             </p>
@@ -141,8 +170,8 @@
             <span class="feature__icon feature__icon--violet" aria-hidden="true"
               >⌂</span
             >
-            <h3>Tuyo y local</h3>
-            <p>
+            <h3 data-i18n="f6.title">Tuyo y local</h3>
+            <p data-i18n="f6.text">
               Sin cuentas ni nube. La app de escritorio guarda todo en tu
               computadora; si prefieres, la instalas en tu servidor con Docker.
             </p>
@@ -153,9 +182,9 @@
       <section class="section showcase">
         <div class="showcase__row">
           <div class="showcase__text">
-            <p class="eyebrow">Elenco</p>
-            <h2>Cada NPC, a un clic</h2>
-            <p>
+            <p class="eyebrow" data-i18n="s1.eyebrow">Elenco</p>
+            <h2 data-i18n="s1.title">Cada NPC, a un clic</h2>
+            <p data-i18n="s1.text">
               Filtra por tipo o estado, busca por nombre o lugar y abre la
               ficha con su descripción, ubicación y relaciones. Los tipos son
               tuyos: humano, spren, monstruo o lo que tu mundo necesite.
@@ -165,6 +194,7 @@
             <img
               src="assets/screens/npcs.jpg"
               alt="Lista de NPCs con tipo, ubicación actual y estado"
+              data-i18n-alt="shot.npcs"
               width="1440"
               height="900"
               loading="lazy"
@@ -174,9 +204,9 @@
 
         <div class="showcase__row showcase__row--flip">
           <div class="showcase__text">
-            <p class="eyebrow">Combate</p>
-            <h2>Iniciativa sin papelitos</h2>
-            <p>
+            <p class="eyebrow" data-i18n="s2.eyebrow">Combate</p>
+            <h2 data-i18n="s2.title">Iniciativa sin papelitos</h2>
+            <p data-i18n="s2.text">
               Suma participantes, ajusta la vida con un clic y avanza rondas.
               Rolboard ordena los turnos; las tiradas y las reglas siguen siendo
               de tu mesa.
@@ -186,6 +216,7 @@
             <img
               src="assets/screens/encounter.jpg"
               alt="Tracker de combate con puntos de vida, iniciativa y turnos rápidos y lentos"
+              data-i18n-alt="shot.encounter"
               width="1440"
               height="900"
               loading="lazy"
@@ -195,9 +226,9 @@
 
         <div class="showcase__row">
           <div class="showcase__text">
-            <p class="eyebrow">Historia</p>
-            <h2>La campaña, de un vistazo</h2>
-            <p>
+            <p class="eyebrow" data-i18n="s3.eyebrow">Historia</p>
+            <h2 data-i18n="s3.title">La campaña, de un vistazo</h2>
+            <p data-i18n="s3.text">
               Sesiones e interludios agrupados por arco, con fecha y título. La
               próxima sesión queda planificada y lista para jugar.
             </p>
@@ -206,6 +237,7 @@
             <img
               src="assets/screens/sessions.jpg"
               alt="Línea de tiempo de sesiones agrupadas por arco"
+              data-i18n-alt="shot.sessions"
               width="1440"
               height="900"
               loading="lazy"
@@ -218,27 +250,31 @@
         <div class="obsidian__card">
           <div>
             <p class="eyebrow">Obsidian</p>
-            <h2>¿Ya tienes tu campaña en Obsidian?</h2>
-            <p>
+            <h2 data-i18n="obs.title">¿Ya tienes tu campaña en Obsidian?</h2>
+            <p data-i18n="obs.text">
               Apunta Rolboard a tu vault y toca <em>Reindexar</em>. Tus notas de
               NPCs, locaciones, facciones, personajes, arcos y sesiones se
               convierten en fichas. Rolboard solo lee: nunca modifica tus notas.
             </p>
           </div>
-          <pre class="vault" aria-label="Estructura de carpetas del vault">
-<span class="vault__dim">Mi campaña/</span>
-├── <b>Arcos/</b>        <span class="vault__dim">→ arcos</span>
+          <pre
+            class="vault"
+            aria-label="Estructura de carpetas del vault"
+            data-i18n-aria-label="obs.tree"
+          >
+<span class="vault__dim" data-i18n="obs.root">Mi campaña/</span>
+├── <b>Arcos/</b>        <span class="vault__dim" data-i18n="obs.arcs">→ arcos</span>
 ├── <b>NPC/</b>          <span class="vault__dim">→ NPCs</span>
-├── <b>Locaciones/</b>   <span class="vault__dim">→ locaciones</span>
-├── <b>Grupos/</b>       <span class="vault__dim">→ facciones</span>
-├── <b>Jugadores/</b>    <span class="vault__dim">→ personajes</span>
-└── <b>Sesiones/</b>     <span class="vault__dim">→ sesiones</span></pre>
+├── <b>Locaciones/</b>   <span class="vault__dim" data-i18n="obs.locations">→ locaciones</span>
+├── <b>Grupos/</b>       <span class="vault__dim" data-i18n="obs.factions">→ facciones</span>
+├── <b>Jugadores/</b>    <span class="vault__dim" data-i18n="obs.characters">→ personajes</span>
+└── <b>Sesiones/</b>     <span class="vault__dim" data-i18n="obs.sessions">→ sesiones</span></pre>
         </div>
       </section>
 
       <section class="section notvtt">
-        <h2>Lo que Rolboard no es</h2>
-        <p>
+        <h2 data-i18n="not.title">Lo que Rolboard no es</h2>
+        <p data-i18n="not.text">
           No es un VTT ni una hoja de personaje. No trae reglas cargadas ni
           tira dados. Es el cuaderno de quien dirige: un lugar para guardar la
           historia, no para jugarla.
@@ -247,9 +283,9 @@
 
       <section class="section" id="descargar">
         <div class="section__head">
-          <p class="eyebrow">Descargar</p>
-          <h2>Gratis. Para siempre.</h2>
-          <p class="section__sub">
+          <p class="eyebrow" data-i18n="dl.eyebrow">Descargar</p>
+          <h2 data-i18n="dl.title">Gratis. Para siempre.</h2>
+          <p class="section__sub" data-i18n="dl.sub">
             Rolboard es de código abierto. Elige cómo usarlo.
           </p>
         </div>
@@ -260,9 +296,10 @@
             <a
               class="btn btn--primary"
               href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-windows-amd64.exe"
+              data-i18n="dl.win.btn"
               >Descargar para Windows</a
             >
-            <p class="dl__note">
+            <p class="dl__note" data-i18n="dl.win.note">
               No está firmado: si Windows muestra un aviso, elige
               <em>Más información → Ejecutar de todas formas</em>.
             </p>
@@ -273,23 +310,27 @@
             <a
               class="btn btn--primary"
               href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-linux-x86_64.AppImage"
+              data-i18n="dl.linux.btn"
               >Descargar para Linux</a
             >
-            <p class="dl__note">
+            <p class="dl__note" data-i18n="dl.linux.note">
               Necesita <code>libwebkit2gtk-4.1</code>. Dale permiso de
               ejecución con <code>chmod +x</code> y ábrelo.
             </p>
           </article>
           <article class="dl">
-            <h3>Servidor</h3>
-            <p class="dl__meta">Docker · varios dispositivos</p>
+            <h3 data-i18n="dl.server.title">Servidor</h3>
+            <p class="dl__meta" data-i18n="dl.server.meta">
+              Docker · varios dispositivos
+            </p>
             <a
               class="btn btn--ghost"
               href="https://github.com/ncorrea-13/rolboard#readme"
               rel="noopener"
+              data-i18n="dl.server.btn"
               >Ver instalación con Docker</a
             >
-            <p class="dl__note">
+            <p class="dl__note" data-i18n="dl.server.note">
               Para usarlo desde la tablet o el celular en la mesa, con clave de
               admin y código por campaña.
             </p>
@@ -299,6 +340,7 @@
           <a
             href="https://github.com/ncorrea-13/rolboard/releases"
             rel="noopener"
+            data-i18n="dl.all"
             >Todas las versiones</a
           >
         </p>
@@ -307,34 +349,173 @@
 
     <footer class="footer">
       <img src="assets/favicon.png" alt="" width="32" height="32" />
-      <p>
+      <p data-i18n="footer.credits">
         Hecho por
         <a href="https://ncorrea.com.ar" rel="noopener">Nicolás Correa</a>.
         Logos e íconos de Mateo Guareschi.
       </p>
-      <p class="footer__legal">
+      <p class="footer__legal" data-i18n="footer.legal">
         Código bajo licencia MIT. Los logos e íconos no están incluidos en esa
         licencia: son de su autor y se usan con permiso.
       </p>
     </footer>
 
     <script>
-      const os = /Windows/i.test(navigator.userAgent)
+      const en = {
+        "meta.title": "Rolboard — Your tabletop campaign, all in one place",
+        "meta.description":
+          "Rolboard is a board for running tabletop RPG campaigns: sessions, arcs, NPCs, locations, factions, quests and a combat tracker. Free, open source and local.",
+        "nav.home": "Rolboard, home",
+        "nav.sections": "Sections",
+        "nav.features": "Features",
+        "nav.download": "Download",
+        "hero.eyebrow": "For whoever runs the table",
+        "hero.title": "Your tabletop campaign, <br />all in one place.",
+        "hero.lead":
+          "Sessions, arcs, NPCs, locations, factions, quests and a combat tracker. Rolboard keeps your campaign's story so you can focus on telling it.",
+        "hero.cta": "Download for free",
+        "hero.code": "View the code",
+        "hero.meta": "Windows · Linux · Docker — open source, MIT license",
+        "shot.dashboard":
+          "Campaign overview in Rolboard: current arc, last session, active quests and recent NPCs",
+        "shot.npcs": "NPC list with type, current location and status",
+        "shot.encounter":
+          "Combat tracker with hit points, initiative and fast and slow turns",
+        "shot.sessions": "Session timeline grouped by arc",
+        "features.eyebrow": "What it does",
+        "features.title": "Everything you need between sessions",
+        "f1.title": "Arcs and sessions",
+        "f1.text":
+          "Plan the next session, mark it as played and write the recap. Everything stays in order on a timeline per arc.",
+        "f2.title": "NPCs with memory",
+        "f2.text":
+          "Your own types, status, location, faction and the sessions they appeared in. Find anyone in seconds.",
+        "f3.title": "Your world, in layers",
+        "f3.text":
+          "Nested regions, cities and places, factions with their members and quests with status and priority.",
+        "f4.title": "Combat tracker",
+        "f4.text":
+          "Initiative, hit points and fast or slow turns for PCs, NPCs and generic enemies. No rules tied to any system.",
+        "f5.text":
+          "The table's sensitive topics, written once and always in view when you play the session.",
+        "f6.title": "Yours and local",
+        "f6.text":
+          "No accounts, no cloud. The desktop app keeps everything on your computer; if you prefer, run it on your own server with Docker.",
+        "s1.eyebrow": "Cast",
+        "s1.title": "Every NPC, one click away",
+        "s1.text":
+          "Filter by type or status, search by name or place and open the sheet with their description, location and relations. The types are yours: human, spren, monster or whatever your world needs.",
+        "s2.eyebrow": "Combat",
+        "s2.title": "Initiative without scraps of paper",
+        "s2.text":
+          "Add participants, adjust HP with a click and advance rounds. Rolboard orders the turns; rolls and rules stay with your table.",
+        "s3.eyebrow": "Story",
+        "s3.title": "The campaign at a glance",
+        "s3.text":
+          "Sessions and interludes grouped by arc, with date and title. The next session is planned and ready to play.",
+        "obs.title": "Already running your campaign in Obsidian?",
+        "obs.text":
+          "Point Rolboard at your vault and press <em>Reindex</em>. Your notes on NPCs, locations, factions, characters, arcs and sessions become sheets. Rolboard only reads: it never changes your notes.",
+        "obs.tree": "Vault folder structure",
+        "obs.root": "My campaign/",
+        "obs.arcs": "→ arcs",
+        "obs.locations": "→ locations",
+        "obs.factions": "→ factions",
+        "obs.characters": "→ characters",
+        "obs.sessions": "→ sessions",
+        "not.title": "What Rolboard is not",
+        "not.text":
+          "It's not a VTT or a character sheet. It ships no rules and doesn't roll dice. It's the GM's notebook: a place to keep the story, not to play it.",
+        "dl.eyebrow": "Download",
+        "dl.title": "Free. Forever.",
+        "dl.sub": "Rolboard is open source. Pick how to use it.",
+        "dl.win.btn": "Download for Windows",
+        "dl.win.note":
+          "It isn't signed: if Windows shows a warning, choose <em>More info → Run anyway</em>.",
+        "dl.linux.btn": "Download for Linux",
+        "dl.linux.note":
+          "Needs <code>libwebkit2gtk-4.1</code>. Make it executable with <code>chmod +x</code> and open it.",
+        "dl.server.title": "Server",
+        "dl.server.meta": "Docker · several devices",
+        "dl.server.btn": "See the Docker setup",
+        "dl.server.note":
+          "To use it from a tablet or phone at the table, with an admin key and a code per campaign.",
+        "dl.all": "All releases",
+        "dl.recommended": "Recommended",
+        "footer.credits":
+          'Made by <a href="https://ncorrea.com.ar" rel="noopener">Nicolás Correa</a>. Logos and icons by Mateo Guareschi.',
+        "footer.legal":
+          "Code under the MIT license. The logos and icons are not covered by it: they belong to their author and are used with permission.",
+      };
+
+      const attrs = ["alt", "content", "aria-label"];
+      const es = { "dl.recommended": "Recomendado" };
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        es[el.dataset.i18n] = el.innerHTML.trim();
+      });
+      for (const attr of attrs) {
+        document.querySelectorAll(`[data-i18n-${attr}]`).forEach((el) => {
+          es[el.getAttribute(`data-i18n-${attr}`)] = el.getAttribute(attr);
+        });
+      }
+      const dict = { es, en };
+
+      const ua = navigator.userAgent;
+      const os = /Windows/i.test(ua)
         ? "windows"
-        : /Linux/i.test(navigator.userAgent) &&
-            !/Android/i.test(navigator.userAgent)
+        : /Linux/i.test(ua) && !/Android/i.test(ua)
           ? "linux"
           : null;
       const card = os && document.querySelector(`.dl[data-os="${os}"]`);
       if (card) {
         card.classList.add("dl--recommended");
+        const btn = card.querySelector("a");
         const cta = document.getElementById("cta-download");
-        cta.href = card.querySelector("a").href;
-        cta.textContent =
-          os === "windows"
-            ? "Descargar para Windows"
-            : "Descargar para Linux";
+        cta.href = btn.href;
+        cta.dataset.i18n = btn.dataset.i18n;
       }
+
+      const toggle = document.getElementById("lang-toggle");
+      function setLang(lang) {
+        const t = dict[lang];
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          el.innerHTML = t[el.dataset.i18n];
+        });
+        for (const attr of attrs) {
+          document.querySelectorAll(`[data-i18n-${attr}]`).forEach((el) => {
+            el.setAttribute(attr, t[el.getAttribute(`data-i18n-${attr}`)]);
+          });
+        }
+        document
+          .querySelectorAll(".dl h3")
+          .forEach((h) => (h.dataset.badge = t["dl.recommended"]));
+        const other = lang === "es" ? "en" : "es";
+        toggle.textContent = other.toUpperCase();
+        toggle.lang = other;
+        toggle.setAttribute(
+          "aria-label",
+          other === "es" ? "Leer en español" : "Read in English",
+        );
+      }
+
+      let saved = null;
+      try {
+        saved = localStorage.getItem("lang");
+      } catch {}
+      const browser = (navigator.languages?.[0] || navigator.language || "")
+        .toLowerCase()
+        .startsWith("es")
+        ? "es"
+        : "en";
+      setLang(saved in dict ? saved : browser);
+      toggle.addEventListener("click", () => {
+        const lang = document.documentElement.lang === "es" ? "en" : "es";
+        setLang(lang);
+        try {
+          localStorage.setItem("lang", lang);
+        } catch {}
+      });
     </script>
   </body>
 </html>

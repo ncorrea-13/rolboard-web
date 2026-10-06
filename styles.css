@@ -156,6 +156,26 @@ code {
   border-radius: 999px;
 }
 
+.nav__lang {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-body);
+  font: 500 13px var(--font-mono);
+  cursor: pointer;
+}
+
+.nav__lang:hover {
+  border-color: var(--violet);
+  color: var(--text);
+}
+
+.nav__lang:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
 /* Buttons */
 
 .btn {
@@ -461,7 +481,7 @@ code {
 }
 
 .dl--recommended h3::after {
-  content: "Recomendado";
+  content: attr(data-badge);
   margin-left: 10px;
   padding: 2px 8px;
   border-radius: 999px;
@@ -549,7 +569,17 @@ code {
 
 @media (max-width: 640px) {
   .nav__links {
-    gap: 16px;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .nav__brand img:first-child {
+    display: none;
+  }
+
+  .nav__gh,
+  .nav__lang {
+    padding: 5px 10px;
   }
 
   .nav__links a[href="#funciones"],
