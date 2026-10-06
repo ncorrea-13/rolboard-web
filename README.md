@@ -7,7 +7,7 @@
 
 [![HTML](https://img.shields.io/badge/HTML-static-E34F26?logo=html5&logoColor=white)](index.html)
 [![CSS](https://img.shields.io/badge/CSS-plain-1572B6?logo=css&logoColor=white)](styles.css)
-[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
 [Español](README.es.md)
@@ -24,7 +24,7 @@ Static site that presents [Rolboard](https://github.com/ncorrea-13/rolboard) and
 | ------- | --------------------------------------- |
 | Page    | Plain HTML + CSS, a few lines of JS     |
 | Fonts   | Google Fonts (Fraunces, Inter, IBM Plex Mono) |
-| Hosting | Cloudflare Pages                        |
+| Hosting | Cloudflare Workers (static assets)      |
 
 Colors and fonts mirror the app's tokens (`client/src/styles/tokens.css`).
 
@@ -38,7 +38,7 @@ Open `http://localhost:8000`.
 
 ## Deploy
 
-Cloudflare Pages connected to this repo: no build command, output directory `/`.
+Deployed to Cloudflare Workers (static assets) by `.github/workflows/deploy.yml` on every push to `main`. It copies the site into `dist/` and runs `wrangler deploy` with `wrangler.jsonc`; the Worker is created on the first deploy. Needs the `CLOUDFLARE_API_TOKEN` (permission *Account → Workers Scripts → Edit*) and `CLOUDFLARE_ACCOUNT_ID` secrets. The custom domain is set on the Worker, under *Settings → Domains & Routes*.
 
 ## Downloads
 
