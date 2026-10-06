@@ -1,0 +1,64 @@
+<div align="center">
+
+<img src="assets/logo-icon.png" height="60" alt="" />
+<img src="assets/logo-wordmark.png" height="72" alt="Rolboard" />
+
+**Landing page for Rolboard**
+
+[![HTML](https://img.shields.io/badge/HTML-static-E34F26?logo=html5&logoColor=white)](index.html)
+[![CSS](https://img.shields.io/badge/CSS-plain-1572B6?logo=css&logoColor=white)](styles.css)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
+
+[Español](README.es.md)
+
+</div>
+
+---
+
+Static site that presents [Rolboard](https://github.com/ncorrea-13/rolboard) and links to its downloads. One page, no framework, no build step.
+
+## Stack
+
+| Layer   | Tech                                    |
+| ------- | --------------------------------------- |
+| Page    | Plain HTML + CSS, a few lines of JS     |
+| Fonts   | Google Fonts (Fraunces, Inter, IBM Plex Mono) |
+| Hosting | Cloudflare Pages                        |
+
+Colors and fonts mirror the app's tokens (`client/src/styles/tokens.css`).
+
+## Development
+
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`.
+
+## Deploy
+
+Cloudflare Pages connected to this repo: no build command, output directory `/`.
+
+## Downloads
+
+The buttons point to `releases/latest/download/<file>` in the Rolboard repo, so the release workflow must publish assets with these exact names:
+
+- `rolboard-windows-amd64.exe`
+- `rolboard-linux-x86_64.AppImage`
+
+The page detects the visitor's OS and highlights the matching download.
+
+## Screenshots
+
+`assets/screens/` comes from a fictional demo campaign, captured at 1440×900, 2x scale.
+
+## License
+
+MIT - see the [Rolboard license](https://github.com/ncorrea-13/rolboard/blob/main/LICENSE).
+
+Logos and icons (`assets/logo-*.png`, `assets/favicon.png`) are © Mateo Guareschi, used with permission. They are **not** covered by the MIT license.
+
+---
+
+_Mendoza, Argentina · Nicolás Correa ([ncorrea-13](https://github.com/ncorrea-13))_
