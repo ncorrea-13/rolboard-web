@@ -49,6 +49,10 @@ The buttons point to `releases/latest/download/<file>` in the Rolboard repo, so 
 
 The page detects the visitor's OS and highlights the matching download.
 
+## Language
+
+Spanish and English. The page picks the browser language (`es*` → Spanish, anything else → English) unless the visitor chose one with the toggle, which is remembered in `localStorage`. The Spanish text lives in the HTML; the English one in the `en` dictionary in `index.html`.
+
 ## Screenshots
 
 `assets/screens/` comes from a fictional demo campaign, captured at 1440×900, 2x scale.

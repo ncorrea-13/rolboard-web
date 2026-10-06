@@ -49,6 +49,10 @@ Los botones apuntan a `releases/latest/download/<archivo>` del repo de Rolboard,
 
 La página detecta el sistema operativo del visitante y resalta la descarga que corresponde.
 
+## Idioma
+
+Español e inglés. La página toma el idioma del browser (`es*` → español, cualquier otro → inglés), salvo que el visitante elija uno con el selector, que se recuerda en `localStorage`. El texto en español está en el HTML; el inglés, en el diccionario `en` de `index.html`.
+
 ## Capturas
 
 `assets/screens/` sale de una campaña de demo ficticia, capturada a 1440×900 con escala 2x.
