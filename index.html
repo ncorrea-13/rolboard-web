@@ -103,6 +103,7 @@
         <figure class="shot shot--hero">
           <img
             src="assets/screens/dashboard.jpg"
+            data-shot="dashboard"
             alt="Resumen de una campaña en Rolboard: arco actual, última sesión, quests activas y NPCs recientes"
             data-i18n-alt="shot.dashboard"
             width="1440"
@@ -197,6 +198,7 @@
           <figure class="shot">
             <img
               src="assets/screens/npcs.jpg"
+            data-shot="npcs"
               alt="Lista de NPCs con tipo, ubicación actual y estado"
               data-i18n-alt="shot.npcs"
               width="1440"
@@ -219,6 +221,7 @@
           <figure class="shot">
             <img
               src="assets/screens/encounter.jpg"
+            data-shot="encounter"
               alt="Tracker de combate con puntos de vida, iniciativa y turnos rápidos y lentos"
               data-i18n-alt="shot.encounter"
               width="1440"
@@ -240,6 +243,7 @@
           <figure class="shot">
             <img
               src="assets/screens/sessions.jpg"
+            data-shot="sessions"
               alt="Línea de tiempo de sesiones agrupadas por arco"
               data-i18n-alt="shot.sessions"
               width="1440"
@@ -283,6 +287,123 @@
           tira dados. Es el cuaderno de quien dirige: un lugar para guardar la
           historia, no para jugarla.
         </p>
+      </section>
+
+      <section class="section faq">
+        <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+        <details>
+          <summary data-i18n="faq.freeq">¿Es gratis?</summary>
+          <p data-i18n="faq.freea">
+            Sí, y lo va a seguir siendo. Rolboard es de código abierto bajo
+            licencia MIT: no hay cuentas, planes pagos ni publicidad. Puedes
+            leer el código, compilarlo tú mismo o adaptarlo a tu mesa.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.systemq">¿Con qué sistema de juego funciona?</summary>
+          <p data-i18n="faq.systema">
+            Con cualquiera. Rolboard no trae reglas ni tira dados: guarda la
+            historia de la campaña. Los atributos y habilidades de personajes
+            y enemigos son campos libres, así que sirven igual para D&amp;D,
+            Cosmere, Pathfinder o un sistema propio, y el tracker de combate
+            admite iniciativa numérica o turnos rápidos y lentos.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.playersq">¿Mis jugadores pueden verla?</summary>
+          <p data-i18n="faq.playersa">
+            No. Rolboard es la herramienta de quien dirige: no hay vista ni
+            cuentas para jugadores, así que tus notas, secretos y planes quedan
+            solo para ti.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q1">¿Dónde quedan mis datos?</summary>
+          <p data-i18n="faq.a1">
+            En tu computadora. La app de escritorio guarda todo en una base
+            SQLite dentro de tu carpeta de usuario
+            (<code>~/.config/rolboard</code> en Linux,
+            <code>%AppData%\rolboard</code> en Windows), junto con las
+            imágenes que subas. No hay cuentas, servidores ni nube: para hacer
+            un backup alcanza con copiar esa carpeta.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">¿Funciona sin internet?</summary>
+          <p data-i18n="faq.a2">
+            Sí. La app de escritorio corre entera en tu computadora y tus
+            datos nunca salen de ahí. Solo necesitas conexión para descargarla
+            y para abrir los links externos, como el repositorio o la
+            documentación.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.updateq">¿Cómo actualizo?</summary>
+          <p data-i18n="faq.updatea">
+            Descarga la versión nueva y reemplaza el ejecutable anterior. Tus
+            campañas viven en tu carpeta de usuario, separadas de la app, así
+            que no se pierden al actualizar. La versión actual aparece en la
+            sección de descargas.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.devicesq">¿Puedo usarla en varios dispositivos?</summary>
+          <p data-i18n="faq.devicesa">
+            La app de escritorio funciona en una sola computadora. Si quieres
+            consultar la campaña desde la tablet o el celular durante la
+            partida, instala la versión Docker en un servidor: se usa desde el
+            navegador de cualquier dispositivo de tu red, con clave de admin.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">¿Hay versión para macOS?</summary>
+          <p data-i18n="faq.a3">
+            Por ahora no: la app no está probada ni firmada para Mac. Si
+            tienes un servidor o una computadora siempre encendida, puedes
+            instalar la versión Docker y usarla desde el navegador del Mac, o
+            de cualquier otro dispositivo de tu red.
+          </p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">¿Necesito Obsidian?</summary>
+          <p data-i18n="faq.a4">
+            No. Rolboard funciona por su cuenta: puedes crear campañas,
+            NPCs, locaciones y sesiones directamente en la app. Si ya llevas tu
+            campaña en Obsidian, apúntalo a tu vault para importar tus notas;
+            cada vez que reindexas se traen los cambios, y desde cada ficha
+            puedes ver la nota completa. Rolboard solo lee: nunca modifica tu
+            vault.
+          </p>
+        </details>
+      </section>
+
+      <section class="section report">
+        <div class="report__card">
+          <div>
+            <h2 data-i18n="report.title">¿Encontraste un error?</h2>
+            <p data-i18n="report.text">
+              Si algo no funciona o se te ocurre una mejora, abre un issue en
+              GitHub. Antes, revisa si ya hay uno parecido: puedes sumarle tu
+              caso.
+            </p>
+          </div>
+          <div class="report__actions">
+            <a
+              class="btn btn--primary"
+              href="https://github.com/ncorrea-13/rolboard/issues/new/choose"
+              rel="noopener"
+              data-i18n="report.new"
+              >Reportar un problema</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/ncorrea-13/rolboard/issues"
+              rel="noopener"
+              data-i18n="report.list"
+              >Ver issues abiertos</a
+            >
+          </div>
+        </div>
       </section>
 
       <section class="section" id="descargar">
@@ -341,6 +462,10 @@
           </article>
         </div>
         <p class="downloads__all">
+          <span id="version" hidden
+            ><span data-i18n="dl.version">Versión actual</span>:
+            <b id="version-tag"></b> ·
+          </span>
           <a
             href="https://github.com/ncorrea-13/rolboard/releases"
             rel="noopener"
@@ -468,6 +593,40 @@
           "To use it from a tablet or phone at the table, with an admin key and a code per campaign.",
         "dl.all": "All releases",
         "dl.recommended": "Recommended",
+        "dl.version": "Latest version",
+        "faq.title": "FAQ",
+        "faq.freeq": "Is it free?",
+        "faq.freea":
+          "Yes, and it will stay that way. Rolboard is open source under the MIT license: no accounts, paid plans or ads. You can read the code, build it yourself or adapt it to your table.",
+        "faq.systemq": "Which game system does it work with?",
+        "faq.systema":
+          "Any of them. Rolboard ships no rules and doesn't roll dice: it keeps the campaign's story. Character and enemy attributes and skills are free-form fields, so they work just as well for D&amp;D, Cosmere, Pathfinder or a homebrew system, and the combat tracker supports numeric initiative or fast and slow turns.",
+        "faq.playersq": "Can my players see it?",
+        "faq.playersa":
+          "No. Rolboard is the GM's tool: there's no player view or player accounts, so your notes, secrets and plans stay yours.",
+        "faq.updateq": "How do I update?",
+        "faq.updatea":
+          "Download the new version and replace the old executable. Your campaigns live in your user folder, separate from the app, so updating doesn't lose them. The current version is shown in the downloads section.",
+        "faq.devicesq": "Can I use it on several devices?",
+        "faq.devicesa":
+          "The desktop app runs on a single computer. If you want to check the campaign from a tablet or phone during the game, install the Docker version on a server: it's used from the browser of any device on your network, with an admin key.",
+        "report.title": "Found a bug?",
+        "report.text":
+          "If something doesn't work or you have an idea, open an issue on GitHub. First check whether there's a similar one: you can add your case to it.",
+        "report.new": "Report a problem",
+        "report.list": "See open issues",
+        "faq.q1": "Where does my data live?",
+        "faq.a1":
+          "On your computer. The desktop app keeps everything in a SQLite database inside your user folder (<code>~/.config/rolboard</code> on Linux, <code>%AppData%\\rolboard</code> on Windows), together with the images you upload. No accounts, servers or cloud: to back it up, just copy that folder.",
+        "faq.q2": "Does it work offline?",
+        "faq.a2":
+          "Yes. The desktop app runs entirely on your computer and your data never leaves it. You only need a connection to download it and to open external links, like the repository or the docs.",
+        "faq.q3": "Is there a macOS version?",
+        "faq.a3":
+          "Not yet: the app isn't tested or signed for Mac. If you have a server or an always-on computer, you can install the Docker version and use it from the Mac's browser, or from any other device on your network.",
+        "faq.q4": "Do I need Obsidian?",
+        "faq.a4":
+          "No. Rolboard works on its own: you can create campaigns, NPCs, locations and sessions right in the app. If you already keep your campaign in Obsidian, point it at your vault to import your notes; every reindex brings in the changes, and each sheet can show the full note. Rolboard only reads: it never changes your vault.",
         "footer.credits":
           "Made by Nicolás Correa. Logos and icons by Mateo Guareschi.",
         "footer.legal":
@@ -513,6 +672,10 @@
             el.setAttribute(attr, t[el.getAttribute(`data-i18n-${attr}`)]);
           });
         }
+        document.querySelectorAll("img[data-shot]").forEach((img) => {
+          const dir = lang === "en" ? "en/" : "";
+          img.src = `assets/screens/${dir}${img.dataset.shot}.jpg`;
+        });
         document
           .querySelectorAll(".dl h3")
           .forEach((h) => (h.dataset.badge = t["dl.recommended"]));
@@ -535,6 +698,15 @@
         ? "es"
         : "en";
       setLang(saved in dict ? saved : browser);
+      fetch("https://api.github.com/repos/ncorrea-13/rolboard/releases/latest")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((release) => {
+          if (!release?.tag_name) return;
+          document.getElementById("version-tag").textContent = release.tag_name;
+          document.getElementById("version").hidden = false;
+        })
+        .catch(() => {});
+
       toggle.addEventListener("click", () => {
         const lang = document.documentElement.lang === "es" ? "en" : "es";
         setLang(lang);
