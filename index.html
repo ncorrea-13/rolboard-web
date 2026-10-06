@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rolboard — Tu campaña de rol, en un solo lugar</title>
+    <meta
+      name="description"
+      content="Rolboard es un tablero para dirigir campañas de rol de mesa: sesiones, arcos, NPCs, locaciones, facciones, quests y un tracker de combate. Gratis, de código abierto y local."
+    />
+    <meta property="og:title" content="Rolboard" />
+    <meta
+      property="og:description"
+      content="Tu campaña de rol, en un solo lugar. Gratis, de código abierto y local."
+    />
+    <meta property="og:image" content="assets/screens/dashboard.jpg" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="nav__brand" href="#top" aria-label="Rolboard, inicio">
+        <img src="assets/logo-icon.png" alt="" width="40" height="29" />
+        <img
+          src="assets/logo-wordmark.png"
+          alt="Rolboard"
+          width="96"
+          height="43"
+        />
+      </a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#funciones">Funciones</a>
+        <a href="#obsidian">Obsidian</a>
+        <a href="#descargar">Descargar</a>
+        <a
+          class="nav__gh"
+          href="https://github.com/ncorrea-13/rolboard"
+          rel="noopener"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">Para quien dirige la mesa</p>
+        <h1>Tu campaña de rol,<br />en un solo lugar.</h1>
+        <p class="hero__lead">
+          Sesiones, arcos, NPCs, locaciones, facciones, quests y un tracker de
+          combate. Rolboard guarda la historia de tu campaña para que tú te
+          ocupes de contarla.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" id="cta-download" href="#descargar"
+            >Descargar gratis</a
+          >
+          <a
+            class="btn btn--ghost"
+            href="https://github.com/ncorrea-13/rolboard"
+            rel="noopener"
+            >Ver el código</a
+          >
+        </div>
+        <p class="hero__meta">
+          Windows · Linux · Docker — código abierto, licencia MIT
+        </p>
+        <figure class="shot shot--hero">
+          <img
+            src="assets/screens/dashboard.jpg"
+            alt="Resumen de una campaña en Rolboard: arco actual, última sesión, quests activas y NPCs recientes"
+            width="1440"
+            height="900"
+            fetchpriority="high"
+          />
+        </figure>
+      </section>
+
+      <section class="section" id="funciones">
+        <div class="section__head">
+          <p class="eyebrow">Qué hace</p>
+          <h2>Todo lo que necesitas entre sesión y sesión</h2>
+        </div>
+        <ul class="features">
+          <li class="feature">
+            <span class="feature__icon feature__icon--violet" aria-hidden="true"
+              >✦</span
+            >
+            <h3>Arcos y sesiones</h3>
+            <p>
+              Planifica la próxima sesión, marcala como jugada y anota el
+              resumen. Todo queda ordenado en una línea de tiempo por arco.
+            </p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon feature__icon--flame" aria-hidden="true"
+              >☗</span
+            >
+            <h3>NPCs con memoria</h3>
+            <p>
+              Tipos propios, estado, ubicación, facción y en qué sesiones
+              aparecieron. Encuentras a cualquiera en segundos.
+            </p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon feature__icon--sky" aria-hidden="true"
+              >⌖</span
+            >
+            <h3>Tu mundo, en capas</h3>
+            <p>
+              Regiones, ciudades y lugares anidados, facciones con sus miembros
+              y quests con estado y prioridad.
+            </p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon feature__icon--rose" aria-hidden="true"
+              >⚔</span
+            >
+            <h3>Tracker de combate</h3>
+            <p>
+              Iniciativa, puntos de vida y turnos rápidos o lentos para PJs,
+              NPCs y enemigos genéricos. Sin reglas atadas a ningún sistema.
+            </p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon feature__icon--green" aria-hidden="true"
+              >❖</span
+            >
+            <h3>Wardails</h3>
+            <p>
+              Los temas sensibles de la mesa, escritos una vez y siempre a la
+              vista cuando juegas la sesión.
+            </p>
+          </li>
+          <li class="feature">
+            <span class="feature__icon feature__icon--violet" aria-hidden="true"
+              >⌂</span
+            >
+            <h3>Tuyo y local</h3>
+            <p>
+              Sin cuentas ni nube. La app de escritorio guarda todo en tu
+              computadora; si prefieres, la instalas en tu servidor con Docker.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section showcase">
+        <div class="showcase__row">
+          <div class="showcase__text">
+            <p class="eyebrow">Elenco</p>
+            <h2>Cada NPC, a un clic</h2>
+            <p>
+              Filtra por tipo o estado, busca por nombre o lugar y abre la
+              ficha con su descripción, ubicación y relaciones. Los tipos son
+              tuyos: humano, spren, monstruo o lo que tu mundo necesite.
+            </p>
+          </div>
+          <figure class="shot">
+            <img
+              src="assets/screens/npcs.jpg"
+              alt="Lista de NPCs con tipo, ubicación actual y estado"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="showcase__row showcase__row--flip">
+          <div class="showcase__text">
+            <p class="eyebrow">Combate</p>
+            <h2>Iniciativa sin papelitos</h2>
+            <p>
+              Suma participantes, ajusta la vida con un clic y avanza rondas.
+              Rolboard ordena los turnos; las tiradas y las reglas siguen siendo
+              de tu mesa.
+            </p>
+          </div>
+          <figure class="shot">
+            <img
+              src="assets/screens/encounter.jpg"
+              alt="Tracker de combate con puntos de vida, iniciativa y turnos rápidos y lentos"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="showcase__row">
+          <div class="showcase__text">
+            <p class="eyebrow">Historia</p>
+            <h2>La campaña, de un vistazo</h2>
+            <p>
+              Sesiones e interludios agrupados por arco, con fecha y título. La
+              próxima sesión queda planificada y lista para jugar.
+            </p>
+          </div>
+          <figure class="shot">
+            <img
+              src="assets/screens/sessions.jpg"
+              alt="Línea de tiempo de sesiones agrupadas por arco"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section obsidian" id="obsidian">
+        <div class="obsidian__card">
+          <div>
+            <p class="eyebrow">Obsidian</p>
+            <h2>¿Ya tienes tu campaña en Obsidian?</h2>
+            <p>
+              Apunta Rolboard a tu vault y toca <em>Reindexar</em>. Tus notas de
+              NPCs, locaciones, facciones, personajes, arcos y sesiones se
+              convierten en fichas. Rolboard solo lee: nunca modifica tus notas.
+            </p>
+          </div>
+          <pre class="vault" aria-label="Estructura de carpetas del vault">
+<span class="vault__dim">Mi campaña/</span>
+├── <b>Arcos/</b>        <span class="vault__dim">→ arcos</span>
+├── <b>NPC/</b>          <span class="vault__dim">→ NPCs</span>
+├── <b>Locaciones/</b>   <span class="vault__dim">→ locaciones</span>
+├── <b>Grupos/</b>       <span class="vault__dim">→ facciones</span>
+├── <b>Jugadores/</b>    <span class="vault__dim">→ personajes</span>
+└── <b>Sesiones/</b>     <span class="vault__dim">→ sesiones</span></pre>
+        </div>
+      </section>
+
+      <section class="section notvtt">
+        <h2>Lo que Rolboard no es</h2>
+        <p>
+          No es un VTT ni una hoja de personaje. No trae reglas cargadas ni
+          tira dados. Es el cuaderno de quien dirige: un lugar para guardar la
+          historia, no para jugarla.
+        </p>
+      </section>
+
+      <section class="section" id="descargar">
+        <div class="section__head">
+          <p class="eyebrow">Descargar</p>
+          <h2>Gratis. Para siempre.</h2>
+          <p class="section__sub">
+            Rolboard es de código abierto. Elige cómo usarlo.
+          </p>
+        </div>
+        <div class="downloads">
+          <article class="dl" data-os="windows">
+            <h3>Windows</h3>
+            <p class="dl__meta">Windows 10 / 11 · 64 bits · .exe</p>
+            <a
+              class="btn btn--primary"
+              href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-windows-amd64.exe"
+              >Descargar para Windows</a
+            >
+            <p class="dl__note">
+              No está firmado: si Windows muestra un aviso, elige
+              <em>Más información → Ejecutar de todas formas</em>.
+            </p>
+          </article>
+          <article class="dl" data-os="linux">
+            <h3>Linux</h3>
+            <p class="dl__meta">x86_64 · AppImage</p>
+            <a
+              class="btn btn--primary"
+              href="https://github.com/ncorrea-13/rolboard/releases/latest/download/rolboard-linux-x86_64.AppImage"
+              >Descargar para Linux</a
+            >
+            <p class="dl__note">
+              Necesita <code>libwebkit2gtk-4.1</code>. Dale permiso de
+              ejecución con <code>chmod +x</code> y ábrelo.
+            </p>
+          </article>
+          <article class="dl">
+            <h3>Servidor</h3>
+            <p class="dl__meta">Docker · varios dispositivos</p>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/ncorrea-13/rolboard#readme"
+              rel="noopener"
+              >Ver instalación con Docker</a
+            >
+            <p class="dl__note">
+              Para usarlo desde la tablet o el celular en la mesa, con clave de
+              admin y código por campaña.
+            </p>
+          </article>
+        </div>
+        <p class="downloads__all">
+          <a
+            href="https://github.com/ncorrea-13/rolboard/releases"
+            rel="noopener"
+            >Todas las versiones</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="assets/favicon.png" alt="" width="32" height="32" />
+      <p>
+        Hecho por
+        <a href="https://ncorrea.com.ar" rel="noopener">Nicolás Correa</a>.
+        Logos e íconos de Mateo Guareschi.
+      </p>
+      <p class="footer__legal">
+        Código bajo licencia MIT. Los logos e íconos no están incluidos en esa
+        licencia: son de su autor y se usan con permiso.
+      </p>
+    </footer>
+
+    <script>
+      const os = /Windows/i.test(navigator.userAgent)
+        ? "windows"
+        : /Linux/i.test(navigator.userAgent) &&
+            !/Android/i.test(navigator.userAgent)
+          ? "linux"
+          : null;
+      const card = os && document.querySelector(`.dl[data-os="${os}"]`);
+      if (card) {
+        card.classList.add("dl--recommended");
+        const cta = document.getElementById("cta-download");
+        cta.href = card.querySelector("a").href;
+        cta.textContent =
+          os === "windows"
+            ? "Descargar para Windows"
+            : "Descargar para Linux";
+      }
+    </script>
+  </body>
+</html>
