@@ -521,9 +521,14 @@ code {
 /* Responsive */
 
 @media (max-width: 900px) {
-  .features,
-  .downloads {
+  .features {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .downloads {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin: 0 auto;
   }
 
   .showcase__row,
@@ -543,17 +548,44 @@ code {
 }
 
 @media (max-width: 640px) {
-  .nav__links a:not(.nav__gh) {
+  .nav__links {
+    gap: 16px;
+  }
+
+  .nav__links a[href="#funciones"],
+  .nav__links a[href="#obsidian"] {
     display: none;
   }
 
   .hero {
-    padding-top: 48px;
+    padding-top: 40px;
   }
 
-  .features,
-  .downloads {
+  .hero h1 br {
+    display: none;
+  }
+
+  .hero__cta .btn {
+    flex: 1 1 100%;
+  }
+
+  .shot img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 35% top;
+  }
+
+  .shot--hero {
+    margin-top: 40px;
+  }
+
+  .features {
     grid-template-columns: 1fr;
+  }
+
+  .feature,
+  .dl {
+    padding: 22px;
   }
 
   .section {
