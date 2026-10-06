@@ -30,6 +30,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
   </head>
   <body>
     <header class="nav">
@@ -77,7 +80,9 @@
 
     <main id="top">
       <section class="hero">
-        <h1 data-i18n="hero.title">Tu campaña de rol, <br />en un solo lugar.</h1>
+        <h1 data-i18n="hero.title">
+          Tu campaña de rol, <br /><span class="grad">en un solo lugar.</span>
+        </h1>
         <p class="hero__lead" data-i18n="hero.lead">
           Sesiones, arcos, NPCs, locaciones, facciones, quests y un tracker de
           combate. Rolboard guarda la historia de tu campaña para que tú te
@@ -522,7 +527,8 @@
         "nav.sections": "Sections",
         "nav.features": "Features",
         "nav.download": "Download",
-        "hero.title": "Your tabletop campaign, <br />all in one place.",
+        "hero.title":
+          'Your tabletop campaign, <br /><span class="grad">all in one place.</span>',
         "hero.lead":
           "Sessions, arcs, NPCs, locations, factions, quests and a combat tracker. Rolboard keeps your campaign's story so you can focus on telling it.",
         "hero.cta": "Download for free",
@@ -706,6 +712,52 @@
           document.getElementById("version").hidden = false;
         })
         .catch(() => {});
+
+      const nav = document.querySelector(".nav");
+      const onScroll = () => nav.classList.toggle("is-scrolled", scrollY > 8);
+      addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      const revealed = document.querySelectorAll(
+        ".section__head, .feature, .showcase__row, .obsidian__card, .notvtt, .faq details, .faq h2, .report__card, .dl, .downloads__all",
+      );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        },
+        { rootMargin: "0px 0px -10% 0px" },
+      );
+      revealed.forEach((el) => {
+        const siblings = [...el.parentElement.children].filter((c) =>
+          c.matches(el.tagName),
+        );
+        el.style.setProperty("--delay", `${(siblings.indexOf(el) % 3) * 90}ms`);
+        el.classList.add("reveal");
+        observer.observe(el);
+      });
+
+      const tilt = (selector, max) =>
+        document.querySelectorAll(selector).forEach((el) => {
+          el.addEventListener("pointermove", (e) => {
+            const r = el.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width;
+            const y = (e.clientY - r.top) / r.height;
+            el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+            el.style.setProperty("--my", `${e.clientY - r.top}px`);
+            el.style.setProperty("--rx", `${(0.5 - y) * max}deg`);
+            el.style.setProperty("--ry", `${(x - 0.5) * max}deg`);
+          });
+          el.addEventListener("pointerleave", () => {
+            el.style.removeProperty("--rx");
+            el.style.removeProperty("--ry");
+          });
+        });
+      tilt(".feature, .dl", 10);
+      tilt(".showcase .shot", 5);
 
       toggle.addEventListener("click", () => {
         const lang = document.documentElement.lang === "es" ? "en" : "es";
