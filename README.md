@@ -38,7 +38,7 @@ Open `http://localhost:8000`.
 
 ## Deploy
 
-Deployed to Cloudflare Workers (static assets) by `.github/workflows/deploy.yml` on every push to `main`. It copies the site into `dist/` and runs `wrangler deploy` with `wrangler.jsonc`; the Worker is created on the first deploy. Needs the `CLOUDFLARE_API_TOKEN` (permission *Account → Workers Scripts → Edit*) and `CLOUDFLARE_ACCOUNT_ID` secrets. The custom domain is set on the Worker, under *Settings → Domains & Routes*.
+Deployed by Cloudflare Workers Builds, connected to this repo. Build command: `mkdir -p dist && cp -r index.html styles.css assets dist/`; deploy command: `npx wrangler deploy`, which serves `dist/` as static assets (`wrangler.jsonc`). The custom domain is set on the Worker, under *Settings → Domains & Routes*.
 
 ## Downloads
 
