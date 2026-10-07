@@ -104,7 +104,7 @@
             >Ver el código</a
           >
         </div>
-        <p class="hero__meta">Windows · Linux · Docker</p>
+        <p class="hero__meta">Windows · Linux · Android · Docker</p>
         <figure class="shot shot--hero">
           <img
             src="assets/screens/dashboard.jpg"
@@ -257,6 +257,50 @@
             />
           </figure>
         </div>
+
+        <div class="showcase__row showcase__row--flip">
+          <div class="showcase__text">
+            <p class="eyebrow" data-i18n="s4.eyebrow">Android</p>
+            <h2 data-i18n="s4.title">También en el bolsillo</h2>
+            <p data-i18n="s4.text">
+              La misma app en el teléfono o la tablet, sin conexión. Elige una
+              carpeta de sincronización y lleva tus campañas entre la
+              computadora y el celular.
+            </p>
+          </div>
+          <figure class="phones">
+            <img
+              class="shot shot--phone"
+              src="assets/screens/android-campaigns.jpg"
+              data-shot="android-campaigns"
+              alt="Selector de campañas en un teléfono Android"
+              data-i18n-alt="shot.android.campaigns"
+              width="780"
+              height="1688"
+              loading="lazy"
+            />
+            <img
+              class="shot shot--phone"
+              src="assets/screens/android-dashboard.jpg"
+              data-shot="android-dashboard"
+              alt="Resumen de una campaña en un teléfono Android"
+              data-i18n-alt="shot.android.dashboard"
+              width="780"
+              height="1688"
+              loading="lazy"
+            />
+            <img
+              class="shot shot--phone"
+              src="assets/screens/android-help.jpg"
+              data-shot="android-help"
+              alt="Página de ayuda en un teléfono Android"
+              data-i18n-alt="shot.android.help"
+              width="780"
+              height="1688"
+              loading="lazy"
+            />
+          </figure>
+        </div>
       </section>
 
       <section class="section obsidian" id="obsidian">
@@ -345,7 +389,8 @@
         <details name="faq">
           <summary data-i18n="faq.updateq">¿Cómo actualizo?</summary>
           <p data-i18n="faq.updatea">
-            Descarga la versión nueva y reemplaza el ejecutable anterior. Tus
+            Descarga la versión nueva y reemplaza el ejecutable anterior (en
+            Android, instala el APK nuevo encima del anterior). Tus
             campañas viven en tu carpeta de usuario, separadas de la app, así
             que no se pierden al actualizar. La versión actual aparece en la
             sección de descargas.
@@ -354,10 +399,13 @@
         <details name="faq">
           <summary data-i18n="faq.devicesq">¿Puedo usarla en varios dispositivos?</summary>
           <p data-i18n="faq.devicesa">
-            La app de escritorio funciona en una sola computadora. Si quieres
-            consultar la campaña desde la tablet o el celular durante la
-            partida, instala la versión Docker en un servidor: se usa desde el
-            navegador de cualquier dispositivo de tu red, con clave de admin.
+            Sí, de dos formas. La app de escritorio y la de Android pueden
+            compartir las campañas con una carpeta de sincronización, que
+            mantienes al día con la herramienta que prefieras (Syncthing, una
+            nube o a mano); está pensada para usar un dispositivo por vez. Si
+            quieres usarla en varios a la vez, instala la versión Docker en un
+            servidor: se usa desde el navegador de cualquier dispositivo de tu
+            red, con clave de admin.
           </p>
         </details>
         <details name="faq">
@@ -446,6 +494,20 @@
             <p class="dl__note" data-i18n="dl.linux.note">
               Necesita <code>libwebkit2gtk-4.1</code>. Dale permiso de
               ejecución con <code>chmod +x</code> y ábrelo.
+            </p>
+          </article>
+          <article class="dl" data-os="android">
+            <h3>Android</h3>
+            <p class="dl__meta">Android 8+ · ARM64 · APK</p>
+            <a
+              class="btn btn--primary"
+              href="https://github.com/ncorrea-13/rolboard/releases/latest"
+              data-i18n="dl.android.btn"
+              >Descargar para Android</a
+            >
+            <p class="dl__note" data-i18n="dl.android.note">
+              No está en Google Play. Si Play Protect muestra un aviso, elige
+              <em>Más detalles → Instalar de todas formas</em>.
             </p>
           </article>
           <article class="dl">
@@ -539,6 +601,9 @@
         "shot.encounter":
           "Combat tracker with hit points, initiative and fast and slow turns",
         "shot.sessions": "Session timeline grouped by arc",
+        "shot.android.campaigns": "Campaign selector on an Android phone",
+        "shot.android.dashboard": "Campaign overview on an Android phone",
+        "shot.android.help": "Help page on an Android phone",
         "features.eyebrow": "What it does",
         "features.title": "Everything you need between sessions",
         "f1.title": "Arcs and sessions",
@@ -570,6 +635,10 @@
         "s3.title": "The campaign at a glance",
         "s3.text":
           "Sessions and interludes grouped by arc, with date and title. The next session is planned and ready to play.",
+        "s4.eyebrow": "Android",
+        "s4.title": "In your pocket too",
+        "s4.text":
+          "The same app on your phone or tablet, offline. Pick a sync folder and take your campaigns between your computer and your phone.",
         "obs.title": "Already running your campaign in Obsidian?",
         "obs.text":
           "Point Rolboard at your vault and press <em>Reindex</em>. Your notes on NPCs, locations, factions, characters, arcs and sessions become sheets. Rolboard only reads: it never changes your notes.",
@@ -592,6 +661,9 @@
         "dl.linux.btn": "Download for Linux",
         "dl.linux.note":
           "Needs <code>libwebkit2gtk-4.1</code>. Make it executable with <code>chmod +x</code> and open it.",
+        "dl.android.btn": "Download for Android",
+        "dl.android.note":
+          "Not on Google Play. If Play Protect shows a warning, choose <em>More details → Install anyway</em>.",
         "dl.server.title": "Server",
         "dl.server.meta": "Docker · several devices",
         "dl.server.btn": "See the Docker setup",
@@ -612,10 +684,10 @@
           "No. Rolboard is the GM's tool: there's no player view or player accounts, so your notes, secrets and plans stay yours.",
         "faq.updateq": "How do I update?",
         "faq.updatea":
-          "Download the new version and replace the old executable. Your campaigns live in your user folder, separate from the app, so updating doesn't lose them. The current version is shown in the downloads section.",
+          "Download the new version and replace the old executable (on Android, install the new APK over the old one). Your campaigns live in your user folder, separate from the app, so updating doesn't lose them. The current version is shown in the downloads section.",
         "faq.devicesq": "Can I use it on several devices?",
         "faq.devicesa":
-          "The desktop app runs on a single computer. If you want to check the campaign from a tablet or phone during the game, install the Docker version on a server: it's used from the browser of any device on your network, with an admin key.",
+          "Yes, in two ways. The desktop and Android apps can share campaigns through a sync folder that you keep up to date with the tool you prefer (Syncthing, a cloud drive, or by hand); it's meant for one device at a time. To use it on several at once, install the Docker version on a server: it's used from the browser of any device on your network, with an admin key.",
         "report.title": "Found a bug?",
         "report.text":
           "If something doesn't work or you have an idea, open an issue on GitHub. First check whether there's a similar one: you can add your case to it.",
@@ -654,9 +726,11 @@
       const ua = navigator.userAgent;
       const os = /Windows/i.test(ua)
         ? "windows"
-        : /Linux/i.test(ua) && !/Android/i.test(ua)
-          ? "linux"
-          : null;
+        : /Android/i.test(ua)
+          ? "android"
+          : /Linux/i.test(ua)
+            ? "linux"
+            : null;
       const card = os && document.querySelector(`.dl[data-os="${os}"]`);
       const cta = document.getElementById("cta-download");
       if (card) {
@@ -713,6 +787,7 @@
           const assets = {
             windows: /windows-amd64.*\.exe$/,
             linux: /linux-x86_64.*\.AppImage$/,
+            android: /android-arm64.*\.apk$/,
           };
           for (const [platform, pattern] of Object.entries(assets)) {
             const asset = release.assets.find((a) => pattern.test(a.name));

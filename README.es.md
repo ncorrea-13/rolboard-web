@@ -42,7 +42,7 @@ Se deploya con Cloudflare Workers Builds, conectado a este repo. Comando de buil
 
 ## Descargas
 
-Los botones de descarga leen las URLs de los assets del último release de Rolboard desde la API de GitHub, buscando `windows-amd64*.exe` y `linux-x86_64*.AppImage` (los assets se llaman, por ejemplo, `rolboard-windows-amd64-v0.1.1.exe`). Si la API no responde, enlazan a la página del último release. La misma consulta muestra la versión actual.
+Los botones de descarga leen las URLs de los assets del último release de Rolboard desde la API de GitHub, buscando `windows-amd64*.exe`, `linux-x86_64*.AppImage` y `android-arm64*.apk` (los assets se llaman, por ejemplo, `rolboard-windows-amd64-v0.1.1.exe`). Si la API no responde, enlazan a la página del último release. La misma consulta muestra la versión actual.
 
 La página detecta el sistema operativo del visitante y resalta la descarga que corresponde.
 

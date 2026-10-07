@@ -42,7 +42,7 @@ Deployed by Cloudflare Workers Builds, connected to this repo. Build command: `m
 
 ## Downloads
 
-The download buttons read the asset URLs of the latest Rolboard release from the GitHub API, matching `windows-amd64*.exe` and `linux-x86_64*.AppImage` (release assets are named like `rolboard-windows-amd64-v0.1.1.exe`). If the API can't be reached, they link to the latest release page. The same request shows the current version.
+The download buttons read the asset URLs of the latest Rolboard release from the GitHub API, matching `windows-amd64*.exe`, `linux-x86_64*.AppImage` and `android-arm64*.apk` (release assets are named like `rolboard-windows-amd64-v0.1.1.exe`). If the API can't be reached, they link to the latest release page. The same request shows the current version.
 
 The page detects the visitor's OS and highlights the matching download.
 
