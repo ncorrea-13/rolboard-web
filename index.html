@@ -118,6 +118,15 @@
         </figure>
       </section>
 
+      <div class="crack" aria-hidden="true">
+        <span class="crack__line crack__line--short"></span>
+        <svg viewBox="0 0 48 14" width="48" height="14">
+          <path d="M0 7 L16 3 L34 11 L48 7" fill="none" stroke="currentColor" />
+          <path d="M24 2 L29 7 L24 12 L19 7 Z" fill="#9b7bea" />
+        </svg>
+        <span class="crack__line"></span>
+      </div>
+
       <section class="section" id="funciones">
         <div class="section__head">
           <p class="eyebrow" data-i18n="features.eyebrow">Qué hace</p>
@@ -127,63 +136,66 @@
         </div>
         <ul class="features">
           <li class="feature">
-            <span class="feature__icon feature__icon--violet" aria-hidden="true"
-              >✦</span
-            >
+            <svg class="feature__icon feature__icon--violet" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
             <h3 data-i18n="f1.title">Arcos y sesiones</h3>
             <p data-i18n="f1.text">
-              Planifica la próxima sesión, marcala como jugada y anota el
-              resumen. Todo queda ordenado en una línea de tiempo por arco.
+              Planifica la próxima sesión, márcala como jugada y anota el resumen. Todo queda ordenado en una línea de tiempo por arco, con oneshots aparte.
             </p>
           </li>
           <li class="feature">
-            <span class="feature__icon feature__icon--flame" aria-hidden="true"
-              >☗</span
-            >
-            <h3 data-i18n="f2.title">NPCs con memoria</h3>
+            <svg class="feature__icon feature__icon--flame" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <h3 data-i18n="f2.title">Elenco con memoria</h3>
             <p data-i18n="f2.text">
-              Tipos propios, estado, ubicación, facción y en qué sesiones
-              aparecieron. Encuentras a cualquiera en segundos.
+              NPCs y jugadores como una galería, con tipos propios, estado, locación, facción y en qué sesiones aparecieron.
             </p>
           </li>
           <li class="feature">
-            <span class="feature__icon feature__icon--sky" aria-hidden="true"
-              >⌖</span
-            >
+            <svg class="feature__icon feature__icon--sky" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <h3 data-i18n="f3.title">Tu mundo, en capas</h3>
             <p data-i18n="f3.text">
-              Regiones, ciudades y lugares anidados, facciones con sus miembros
-              y quests con estado y prioridad.
+              Regiones, ciudades y lugares anidados con tiendas, facciones con sus miembros, lore por categorías y varias líneas de tiempo.
             </p>
           </li>
           <li class="feature">
-            <span class="feature__icon feature__icon--rose" aria-hidden="true"
-              >⚔</span
-            >
+            <svg class="feature__icon feature__icon--rose" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="m5 14 4 4"/><path d="m7 17-3 3"/></svg>
             <h3 data-i18n="f4.title">Tracker de combate</h3>
             <p data-i18n="f4.text">
-              Iniciativa, puntos de vida y turnos rápidos o lentos para PJs,
-              NPCs y enemigos genéricos. Sin reglas atadas a ningún sistema.
+              Iniciativa, vida y fases rápida o lenta para PJs, NPCs y enemigos genéricos, con el siguiente en actuar marcado. Sin reglas atadas a un sistema.
             </p>
           </li>
           <li class="feature">
-            <span class="feature__icon feature__icon--green" aria-hidden="true"
-              >❖</span
-            >
-            <h3>Wardails</h3>
+            <svg class="feature__icon feature__icon--green" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+            <h3 data-i18n="f5.title">Objetos y monedas</h3>
             <p data-i18n="f5.text">
-              Los temas sensibles de la mesa, escritos una vez y siempre a la
-              vista cuando juegas la sesión.
+              Un catálogo con precios en varias monedas, inventarios de NPCs y jugadores, y tiendas por locación.
             </p>
           </li>
           <li class="feature">
-            <span class="feature__icon feature__icon--violet" aria-hidden="true"
-              >⌂</span
-            >
-            <h3 data-i18n="f6.title">Tuyo y local</h3>
+            <svg class="feature__icon feature__icon--violet" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="m1 1 22 22"/></svg>
+            <h3 data-i18n="f6.title">Secretos y wardails</h3>
             <p data-i18n="f6.text">
-              Sin cuentas ni nube. La app de escritorio guarda todo en tu
-              computadora; si prefieres, la instalas en tu servidor con Docker.
+              Qué sabe quién, qué está oculto y qué ya se reveló; y los temas sensibles de la mesa siempre a la vista al jugar.
+            </p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon feature__icon--flame" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <h3 data-i18n="f7.title">Búsqueda global</h3>
+            <p data-i18n="f7.text">
+              Una paleta con Ctrl + K que encuentra NPCs, sesiones, lore, objetos y más en toda la campaña.
+            </p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon feature__icon--sky" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
+            <h3 data-i18n="f8.title">Imágenes y color</h3>
+            <p data-i18n="f8.text">
+              Una imagen por NPC, jugador, locación, facción, objeto, arco, lore y quest, y un color por tipo.
+            </p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon feature__icon--rose" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            <h3 data-i18n="f9.title">Tuyo y local</h3>
+            <p data-i18n="f9.text">
+              Sin cuentas ni nube. La app de escritorio guarda todo en tu computadora; si prefieres, la instalas en tu servidor con Docker.
             </p>
           </li>
         </ul>
@@ -251,6 +263,52 @@
             data-shot="sessions"
               alt="Línea de tiempo de sesiones agrupadas por arco"
               data-i18n-alt="shot.sessions"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="showcase__row showcase__row--flip">
+          <div class="showcase__text">
+            <p class="eyebrow" data-i18n="s5.eyebrow">Mundo</p>
+            <h2 data-i18n="s5.title">Lore con orden propio</h2>
+            <p data-i18n="s5.text">
+              Entradas por categoría, enlazadas a arcos y locaciones, y una
+              línea de tiempo con fechas libres como «Año 205». Con Markdown,
+              avisos al estilo Obsidian y tablas.
+            </p>
+          </div>
+          <figure class="shot">
+            <img
+              src="assets/screens/world.jpg"
+              data-shot="world"
+              alt="Lore agrupado por categoría"
+              data-i18n-alt="shot.world"
+              width="1440"
+              height="900"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="showcase__row">
+          <div class="showcase__text">
+            <p class="eyebrow" data-i18n="s6.eyebrow">Búsqueda</p>
+            <h2 data-i18n="s6.title">Todo, con Ctrl + K</h2>
+            <p data-i18n="s6.text">
+              Una paleta de comandos para saltar a cualquier ficha de la
+              campaña sin pasar por los menús. Escribe, elige y listo: ideal a
+              mitad de partida.
+            </p>
+          </div>
+          <figure class="shot">
+            <img
+              src="assets/screens/search.jpg"
+              data-shot="search"
+              alt="Paleta de búsqueda con resultados de toda la campaña"
+              data-i18n-alt="shot.search"
               width="1440"
               height="900"
               loading="lazy"
@@ -606,21 +664,21 @@
         "features.title": "Everything you need between sessions",
         "f1.title": "Arcs and sessions",
         "f1.text":
-          "Plan the next session, mark it as played and write the recap. Everything stays in order on a timeline per arc.",
-        "f2.title": "NPCs with memory",
+          "Plan the next session, mark it as played and write the recap. Everything stays in order on a timeline per arc, with oneshots on their own.",
+        "f2.title": "A cast with memory",
         "f2.text":
-          "Your own types, status, location, faction and the sessions they appeared in. Find anyone in seconds.",
+          "NPCs and players as a gallery, with your own types, status, location, faction and the sessions they appeared in.",
         "f3.title": "Your world, in layers",
         "f3.text":
-          "Nested regions, cities and places, factions with their members and quests with status and priority.",
+          "Nested regions, cities and places with shops, factions with their members, lore by category and several timelines.",
         "f4.title": "Combat tracker",
         "f4.text":
-          "Initiative, hit points and fast or slow turns for PCs, NPCs and generic enemies. No rules tied to any system.",
+          "Initiative, HP and fast or slow phases for PCs, NPCs and generic enemies, with the next to act marked. No rules tied to any system.",
         "f5.text":
-          "The table's sensitive topics, written once and always in view when you play the session.",
-        "f6.title": "Yours and local",
+          "A catalog priced in several currencies, NPC and player inventories, and a shop per location.",
+        "f6.title": "Secrets and wardails",
         "f6.text":
-          "No accounts, no cloud. The desktop app keeps everything on your computer; if you prefer, run it on your own server with Docker.",
+          "Who knows what, what is hidden and what was revealed; and the table's sensitive topics always in view as you play.",
         "s1.eyebrow": "Cast",
         "s1.title": "Every NPC, one click away",
         "s1.text":
@@ -633,6 +691,21 @@
         "s3.title": "The campaign at a glance",
         "s3.text":
           "Sessions and interludes grouped by arc, with date and title. The next session is planned and ready to play.",
+        "f5.title": "Items and currencies",
+        "f7.title": "Global search",
+        "f7.text": "A Ctrl + K palette that finds NPCs, sessions, lore, items and more across the whole campaign.",
+        "f8.title": "Images and colour",
+        "f8.text": "One image per NPC, player, location, faction, item, arc, lore entry and quest, and a colour per type.",
+        "f9.title": "Yours and local",
+        "f9.text": "No accounts, no cloud. The desktop app keeps everything on your computer; if you prefer, run it on your own server with Docker.",
+        "s5.eyebrow": "World",
+        "s5.title": "Lore with its own order",
+        "s5.text": "Entries by category, linked to arcs and locations, and a timeline with free-form dates like “Year 205”. With Markdown, Obsidian-style notices and tables.",
+        "s6.eyebrow": "Search",
+        "s6.title": "Everything, with Ctrl + K",
+        "s6.text": "A command palette to jump to any sheet in the campaign without going through menus. Type, pick and go: ideal mid-game.",
+        "shot.world": "Lore grouped by category",
+        "shot.search": "Search palette with results from the whole campaign",
         "s4.eyebrow": "Android",
         "s4.title": "In your pocket too",
         "s4.text":
@@ -822,25 +895,6 @@
         el.classList.add("reveal");
         observer.observe(el);
       });
-
-      const tilt = (selector, max) =>
-        document.querySelectorAll(selector).forEach((el) => {
-          el.addEventListener("pointermove", (e) => {
-            const r = el.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width;
-            const y = (e.clientY - r.top) / r.height;
-            el.style.setProperty("--mx", `${e.clientX - r.left}px`);
-            el.style.setProperty("--my", `${e.clientY - r.top}px`);
-            el.style.setProperty("--rx", `${(0.5 - y) * max}deg`);
-            el.style.setProperty("--ry", `${(x - 0.5) * max}deg`);
-          });
-          el.addEventListener("pointerleave", () => {
-            el.style.removeProperty("--rx");
-            el.style.removeProperty("--ry");
-          });
-        });
-      tilt(".feature, .dl", 10);
-      tilt(".showcase .shot", 5);
 
       toggle.addEventListener("click", () => {
         const lang = document.documentElement.lang === "es" ? "en" : "es";
