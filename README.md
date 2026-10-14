@@ -16,7 +16,7 @@
 
 ---
 
-Static site that presents [Rolboard](https://github.com/ncorrea-13/rolboard) and links to its downloads. One page, no framework, no build step.
+Static site that presents [Rolboard](https://github.com/ncorrea-13/rolboard) and links to its downloads. Two pages (`index.html`, the landing, and `obsidian.html`, a guide to preparing an Obsidian vault), no framework, no build step. The language toggle, nav behaviour and scroll reveal are shared in `site.js`; each page keeps its own English dictionary.
 
 ## Stack
 
@@ -38,7 +38,7 @@ Open `http://localhost:8000`.
 
 ## Deploy
 
-Deployed by Cloudflare Workers Builds, connected to this repo. Build command: `mkdir -p dist && cp -r index.html styles.css assets dist/`; deploy command: `npx wrangler deploy`, which serves `dist/` as static assets (`wrangler.jsonc`). The custom domain is set on the Worker, under *Settings → Domains & Routes*.
+Deployed by Cloudflare Workers Builds, connected to this repo. Build command: `mkdir -p dist && cp -r assets dist/ && cp *.html *.css *.js dist/`; deploy command: `npx wrangler deploy`, which serves `dist/` as static assets (`wrangler.jsonc`). The custom domain is set on the Worker, under *Settings → Domains & Routes*.
 
 ## Downloads
 
