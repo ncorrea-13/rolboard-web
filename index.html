@@ -856,7 +856,7 @@
           document.getElementById("version").hidden = false;
           const assets = {
             windows: /windows-amd64.*\.exe$/,
-            linux: /linux-x86_64.*\.AppImage$/,
+            linux: /linux-(amd64|x86_64).*\.AppImage$/,
             android: /android-arm64.*\.apk$/,
           };
           for (const [platform, pattern] of Object.entries(assets)) {
