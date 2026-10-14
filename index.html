@@ -533,7 +533,7 @@
         <div class="downloads">
           <article class="dl" data-os="windows">
             <h3>Windows</h3>
-            <p class="dl__meta">x86_64 · .exe</p>
+            <p class="dl__meta">x64 (amd64) · .exe</p>
             <a
               class="btn btn--primary"
               href="https://github.com/ncorrea-13/rolboard/releases/latest"
@@ -547,7 +547,7 @@
           </article>
           <article class="dl" data-os="linux">
             <h3>Linux</h3>
-            <p class="dl__meta">x86_64 · .AppImage</p>
+            <p class="dl__meta">x64 (amd64) · .AppImage</p>
             <a
               class="btn btn--primary"
               href="https://github.com/ncorrea-13/rolboard/releases/latest"
@@ -575,7 +575,7 @@
           </article>
           <article class="dl">
             <h3 data-i18n="dl.server.title">Servidor</h3>
-            <p class="dl__meta">x86_64 / ARM64 · ghcr.io</p>
+            <p class="dl__meta">x64 (amd64) / ARM64 · ghcr.io</p>
             <a
               class="btn btn--ghost"
               href="https://github.com/ncorrea-13/rolboard#readme"
@@ -819,7 +819,7 @@
           document.getElementById("version").hidden = false;
           const assets = {
             windows: /windows-amd64.*\.exe$/,
-            linux: /linux-x86_64.*\.AppImage$/,
+            linux: /linux-(amd64|x86_64).*\.AppImage$/,
             android: /android-arm64.*\.apk$/,
           };
           for (const [platform, pattern] of Object.entries(assets)) {
