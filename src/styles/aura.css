@@ -1,0 +1,108 @@
+/* Aura: the hero's violet sky with constellations and a magic circle, reusable behind any section.
+   Put `aura` (plus a placement and a constellation) on a section and, if wanted, a <Sigil className="aura__sigil ..."> inside. */
+.aura {
+  position: relative;
+  isolation: isolate;
+  --aura-glow: 55% 60% at 82% 45%, rgb(116 87 201 / 0.26), transparent 70%;
+  --aura-stars: url("/assets/constellation.svg");
+  --aura-stars-opacity: 0.28;
+}
+
+.aura::before,
+.aura::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--space-7)) calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.aura::before {
+  background: radial-gradient(var(--aura-glow));
+}
+
+.aura::after {
+  background: var(--aura-stars) center / cover no-repeat;
+  opacity: var(--aura-stars-opacity);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 22%,
+    black 78%,
+    transparent
+  );
+}
+
+.aura--right {
+  --aura-glow: 55% 60% at 82% 45%, rgb(116 87 201 / 0.26), transparent 70%;
+}
+
+.aura--left {
+  --aura-glow: 55% 60% at 14% 50%, rgb(116 87 201 / 0.22), transparent 70%;
+}
+
+.aura--center {
+  --aura-glow: 50% 60% at 50% 50%, rgb(116 87 201 / 0.22), transparent 70%;
+}
+
+.aura--ember {
+  --aura-glow: 50% 60% at 16% 55%, rgb(208 138 60 / 0.14), transparent 70%;
+}
+
+.aura--c2 {
+  --aura-stars: url("/assets/constellation-2.svg");
+}
+
+.aura--c3 {
+  --aura-stars: url("/assets/constellation-3.svg");
+}
+
+.aura--faint {
+  --aura-stars-opacity: 0.16;
+}
+
+.aura__sigil {
+  position: absolute;
+  z-index: -1;
+  width: clamp(16rem, 42vw, 34rem);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.aura__sigil--right {
+  right: -10%;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.aura__sigil--left {
+  left: -10%;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.aura__sigil--center {
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: clamp(20rem, 64vw, 46rem);
+  opacity: 0.1;
+}
+
+@media (min-width: 960px) {
+  .aura__sigil {
+    opacity: 0.16;
+  }
+
+  .aura__sigil--right {
+    right: -4%;
+  }
+
+  .aura__sigil--left {
+    left: -4%;
+  }
+
+  .aura__sigil--center {
+    opacity: 0.12;
+  }
+}

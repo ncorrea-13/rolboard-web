@@ -1,0 +1,159 @@
+.crack {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--max);
+  margin: var(--space-8) auto 0;
+  padding-inline: var(--gutter);
+  color: var(--border-strong);
+}
+
+.crack__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+
+.crack__line:last-child {
+  background: linear-gradient(270deg, transparent, currentColor);
+}
+
+.crack__vein {
+  stroke: currentColor;
+}
+
+.crack__gem {
+  fill: var(--violet);
+}
+
+.crack__ember {
+  fill: var(--ember);
+}
+
+/* Frame: corner brackets drawn with gradients (no one-sided borders), full hairline between. */
+.frame {
+  --corner: 18px;
+  --bracket: var(--ember);
+  position: relative;
+  padding: var(--frame-pad);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--frame-gap));
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bracket), var(--bracket)) top left / var(--corner) 1px
+      no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) top left / 1px var(--corner)
+      no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) top right / var(--corner)
+      1px no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) top right / 1px
+      var(--corner) no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) bottom left / var(--corner)
+      1px no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) bottom left / 1px
+      var(--corner) no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) bottom right / var(--corner)
+      1px no-repeat,
+    linear-gradient(var(--bracket), var(--bracket)) bottom right / 1px
+      var(--corner) no-repeat;
+}
+
+.frame img {
+  width: 100%;
+}
+
+.sigil {
+  width: 100%;
+  fill: none;
+  stroke: var(--ember);
+  stroke-width: 1;
+}
+
+.sigil__ring--soft {
+  stroke-opacity: 0.45;
+}
+
+.sigil__tick {
+  stroke-opacity: 0.7;
+}
+
+.sigil__rune {
+  fill: var(--ember);
+  stroke: none;
+  fill-opacity: 0.8;
+}
+
+.sigil__star {
+  stroke: var(--violet);
+  stroke-opacity: 0.7;
+}
+
+.d20 {
+  width: 100%;
+  overflow: visible;
+}
+
+.d20__body {
+  fill: var(--bg-elevated);
+  stroke: var(--ember);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.d20__face {
+  fill: var(--violet-soft);
+  stroke: var(--violet);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.d20__edge {
+  stroke: var(--ember);
+  stroke-opacity: 0.55;
+  stroke-width: 1.2;
+}
+
+.d20__num {
+  fill: var(--text-primary);
+  font: 700 21px var(--font-display); /* ds-allow-hardcode: SVG user units, not CSS px */
+}
+
+.d20--roll {
+  animation: roll var(--dur-roll) var(--ease);
+  transform-origin: 50% 50%;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(-260deg) scale(0.6);
+    opacity: 0.4;
+  }
+
+  45% {
+    transform: translateY(calc(-1 * var(--travel-lg))) rotate(-90deg)
+      scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+.sigil__bead {
+  fill: var(--bg-canvas);
+  stroke: var(--ember);
+}
+
+.sigil__glyph {
+  stroke: var(--ember);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-opacity: 0.85;
+}
