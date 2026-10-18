@@ -1,0 +1,1 @@
+{"root":true,"extends":["html-validate:recommended"],"rules":{"void-style":"off","doctype-style":"off","no-trailing-whitespace":"off","aria-label-misuse":"off"}}
