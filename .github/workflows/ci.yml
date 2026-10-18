@@ -26,5 +26,5 @@ jobs:
       - uses: lycheeverse/lychee-action@v2.9.0
         with:
           # linkedin answers 999 to bots; fonts hosts are preconnect-only
-          args: --no-progress --exclude linkedin.com --exclude fonts.g '*.html' '*.md'
+          args: --no-progress --root-dir ${{ github.workspace }} --exclude linkedin.com --exclude fonts.g '*.html' '*.md'
           fail: true
