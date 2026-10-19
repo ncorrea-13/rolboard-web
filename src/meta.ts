@@ -1,5 +1,5 @@
-import { es } from "./i18n/es";
-import { ORIGIN, pageById, type PageId } from "./site";
+import { es } from "./i18n/es.ts";
+import { ORIGIN, pageById, type PageId } from "./site.ts";
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");

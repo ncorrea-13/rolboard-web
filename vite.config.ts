@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
-import { fillTemplate } from "./src/meta";
-import { PAGES, pageFromPath } from "./src/site";
+import { fillTemplate } from "./src/meta.ts";
+import { PAGES, pageFromPath } from "./src/site.ts";
 
 // One HTML template serves every page. In dev this plugin routes /faq, /download... to it
 // and fills the metadata; in the build, scripts/prerender.mjs writes one static file per page.

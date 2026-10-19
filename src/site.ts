@@ -5,7 +5,7 @@ import {
   House,
   type LucideIcon,
 } from "lucide-react";
-import type { Key } from "./i18n/es";
+import type { Key } from "./i18n/es.ts";
 
 export const ORIGIN = "https://rolboard.ncorrea.com.ar";
 
