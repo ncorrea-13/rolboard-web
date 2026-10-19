@@ -1,0 +1,238 @@
+.fab {
+  position: fixed;
+  left: var(--space-5);
+  bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: var(--fab);
+  height: var(--fab);
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--violet);
+  color: var(--on-violet);
+  box-shadow: var(--shadow-fab);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    background var(--dur-fast);
+}
+
+.fab:hover {
+  background: var(--violet-hi);
+}
+
+.fab:active {
+  transform: scale(0.9);
+}
+
+.menu {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-y: auto;
+  background: var(--bg-canvas);
+  color: var(--text-body);
+}
+
+.menu::backdrop {
+  background: var(--bg-canvas);
+}
+
+.menu__sigil {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  width: 150vmin;
+  translate: -50% -50%;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.menu__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 100%;
+  padding: var(--space-7) var(--space-5);
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: min(var(--w-menu), 85vw);
+  min-height: var(--tap);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font: 600 1.2rem var(--font-display);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast),
+    transform var(--dur-fast) var(--ease);
+}
+
+.menu__item:hover {
+  border-color: var(--violet);
+  text-decoration: none;
+}
+
+.menu__item:active {
+  transform: scale(0.97);
+}
+
+.menu__item[aria-current="page"] {
+  border-color: var(--ember);
+}
+
+.menu__group {
+  align-self: center;
+  width: min(var(--w-menu), 85vw);
+  margin-top: var(--space-3);
+  font: 500 0.7rem var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.menu__item--sub {
+  min-height: var(--tap);
+  padding-block: var(--space-2);
+  gap: var(--space-3);
+  font-size: 1.05rem;
+}
+
+.menu__item--sub:not([data-primary])::before {
+  content: "";
+  flex: none;
+  width: var(--mark);
+  height: var(--mark);
+  background: var(--ember);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.menu__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--ctl-sm);
+  height: var(--ctl-sm);
+  border-radius: var(--radius-md);
+  background: var(--ember-soft);
+  color: var(--ember);
+}
+
+.menu__item[data-primary] {
+  border-color: transparent;
+  background: var(--violet);
+  color: var(--on-violet);
+}
+
+.menu__item[data-primary] .menu__icon {
+  background: var(--on-violet);
+  color: var(--violet);
+}
+
+.menu__close {
+  justify-content: center;
+  margin-top: var(--space-3);
+  background: none;
+  font: 600 1rem var(--font-body);
+  color: var(--text-body);
+}
+
+.menu[open] {
+  animation: fade var(--dur) var(--ease) both;
+}
+
+.menu[open] .menu__item {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fy: var(--travel-sm);
+  animation-delay: calc(var(--i, 0) * var(--stagger-fast));
+}
+
+.menu__list > :nth-child(2) {
+  --i: 1;
+}
+
+.menu__list > :nth-child(3) {
+  --i: 2;
+}
+
+.menu__list > :nth-child(4) {
+  --i: 3;
+}
+
+.menu__list > :nth-child(5) {
+  --i: 4;
+}
+
+.menu__list > :nth-child(6) {
+  --i: 5;
+}
+
+.menu__list > :nth-child(7) {
+  --i: 6;
+}
+
+.menu__list > :nth-child(8) {
+  --i: 7;
+}
+
+.menu__list > :nth-child(9) {
+  --i: 8;
+}
+
+.menu__list > :nth-child(10) {
+  --i: 9;
+}
+
+.menu__list > :nth-child(11) {
+  --i: 10;
+}
+
+.menu__list > :nth-child(12) {
+  --i: 11;
+}
+
+html:has(.menu[open]) {
+  overflow: hidden;
+}
+
+.nav__lang {
+  order: -1;
+}
+
+.footer {
+  padding-bottom: calc(var(--space-3) + var(--fab));
+}
+
+@media (min-width: 960px) {
+  .fab,
+  .menu {
+    display: none;
+  }
+
+  .nav__lang {
+    order: 0;
+  }
+
+  .footer {
+    padding-bottom: var(--space-5);
+  }
+}
+
+.menu__logo {
+  width: var(--logo-w-xl);
+  margin-bottom: var(--space-3);
+}

@@ -1,1 +1,1 @@
-{"root":true,"extends":["html-validate:recommended"],"rules":{"void-style":"off","doctype-style":"off","no-trailing-whitespace":"off","aria-label-misuse":"off"}}
+{"root":true,"extends":["html-validate:recommended"],"rules":{"void-style":"off","doctype-style":"off","no-trailing-whitespace":"off","aria-label-misuse":"off","attribute-boolean-style":"off","attribute-empty-style":"off","prefer-native-element":["error",{"exclude":["combobox","listbox"]}]}}

@@ -5,7 +5,7 @@ Pendiente para una próxima versión. Cuando se implemente algo, se documenta en
 ## Contexto
 
 - La ayuda de la app vive en `client/src/screens/helpContent.tsx` (repo `rolboard`): ~1700 líneas de JSX, un arreglo `es` y otro `en`, 7 páginas (`inicio`, `campaña`, `combate`, `herramientas`, `obsidian`, `datos`, `acerca`). `Help.tsx` filtra las secciones por modo (`web`, `desktop`, `android`).
-- La web tiene el landing y, en la branch `feat/obsidian-page`, una guía de Obsidian. El selector de idioma y la barra viven en `site.js`.
+- La web tiene el landing y, en la branch `feat/obsidian-page`, una guía de Obsidian. El selector de idioma y la barra viven en `src/` (React + TypeScript sobre Vite).
 - La ayuda de la app ya cumple su función dentro de la app y funciona offline. Lo que falta en la web es lo que busca alguien que todavía no instaló.
 
 ## Objetivo
@@ -17,7 +17,7 @@ Que quien llega por buscador pueda entender qué es Rolboard y cómo empezar sin
 ### 1. Página `/empezar` (estática, sin tocar la app)
 
 - Adaptar la sección `inicio` de la ayuda: qué es, cómo empezar, recorrido de la pantalla. 3 secciones, no 7.
-- Mismo patrón que `obsidian.html`: HTML estático, `site.js` compartido, diccionario `en` propio.
+- Mismo patrón que `obsidian.html`: una página más en `src/pages`, con sus textos en `src/i18n`.
 - Enlazarla desde el nav y el hero del landing.
 - Copia manual: asumir que se desactualiza; por eso se limita a lo que casi no cambia.
 
@@ -30,7 +30,7 @@ Mover la ayuda a archivos Markdown y consumir los mismos desde la app y la web.
 - La web los toma en su build (copia en el release, o fetch al repo).
 - Requiere reescribir los bloques JSX propios (`Callout`, `CalloutTypes`, `Code`, `ForMode`, `Author`) a Markdown o a una convención.
 
-### 3. Astro (solo si la web pasa de ~4-5 páginas)
+### 3. Astro (solo si la web pasa de ~4-5 páginas, hoy hay un prerender propio)
 
 - Genera HTML estático, soporta Markdown e i18n por rutas, y sigue sirviéndose desde Cloudflare.
 - No se justifica antes: hoy son dos páginas y lo repetido es la barra y el footer.

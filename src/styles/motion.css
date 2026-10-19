@@ -1,0 +1,680 @@
+/* Motion. Rules: every animation is one-shot or driven by input (scroll, pointer, click),
+   nothing loops, and prefers-reduced-motion switches all of it off (see base.css). */
+
+@property --corner {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 18px; /* ds-allow-hardcode: @property needs a literal, matches .frame */
+}
+
+.nav {
+  animation: nav-in var(--dur-pop) var(--ease) both;
+}
+
+.hero__copy > * {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+.hero__copy > :nth-child(1) {
+  --i: 1;
+}
+
+.hero__copy > :nth-child(3) {
+  --i: 4;
+}
+
+.hero__copy > :nth-child(4) {
+  --i: 5;
+}
+
+.hero__copy > :nth-child(5) {
+  --i: 6;
+}
+
+.hero__copy > .hero__title {
+  animation: none;
+}
+
+.hero__title span,
+.hero__title em {
+  animation: line-in var(--dur-slow) var(--ease) both;
+}
+
+.hero__title span {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+.hero__title em {
+  animation-delay: calc(3.5 * var(--stagger));
+}
+
+.hero__table {
+  animation: rise var(--dur-slow) var(--ease) calc(3 * var(--stagger)) both;
+  --fx: var(--travel-lg);
+  --fy: 0px;
+}
+
+.fighter {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  animation-delay: calc(6 * var(--stagger));
+}
+
+.fighter:nth-child(2) {
+  animation-delay: calc(7 * var(--stagger));
+}
+
+.fighter:nth-child(3) {
+  animation-delay: calc(8 * var(--stagger));
+}
+
+@keyframes nav-in {
+  from {
+    translate: 0 -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+    translate: 0 0.35em;
+    filter: blur(var(--blur-sm));
+  }
+}
+
+.hero__table .frame {
+  transform: perspective(var(--persp)) rotateY(calc(var(--ry, 0) * 4deg))
+    rotateX(calc(var(--rx, 0) * -3deg));
+  transition:
+    transform var(--dur) var(--ease),
+    --corner var(--dur) var(--ease);
+}
+
+.frame {
+  transition: --corner var(--dur) var(--ease);
+}
+
+.frame:hover {
+  --corner: var(--corner-lg);
+}
+
+/* Start states for the draw-in animations. Only when motion is allowed and JS will reveal them,
+   so reduced-motion and no-JS visitors see everything already in place. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .crack__line {
+    scale: 0 1;
+  }
+
+  .js .crack__vein {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .js .crack__gem,
+  .js .crack__ember {
+    scale: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .js .route__pin {
+    scale: 0;
+  }
+
+  .js .route__stop::before {
+    scale: 1 0;
+    transform-origin: top;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 960px) {
+  .js .route__stop::before {
+    scale: 0 1;
+    transform-origin: left;
+  }
+}
+
+.crack__line:first-child {
+  transform-origin: right;
+}
+
+.crack__line:last-child {
+  transform-origin: left;
+}
+
+.crack[data-in] .crack__line {
+  animation: grow var(--dur-draw) var(--ease) both;
+}
+
+.crack[data-in] .crack__vein {
+  animation: draw var(--dur-draw) var(--ease) calc(2 * var(--stagger)) both;
+}
+
+.crack[data-in] .crack__gem {
+  animation: pop var(--dur-pop) var(--ease) calc(5 * var(--stagger)) both;
+}
+
+.crack[data-in] .crack__ember {
+  animation: pop var(--dur-pop) var(--ease) calc(7 * var(--stagger)) both;
+}
+
+@keyframes grow {
+  to {
+    scale: 1 1;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pop {
+  60% {
+    scale: 1.35;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+.codex__page:not([hidden]) .frame,
+.tablet__panel {
+  animation: page-in var(--dur) var(--ease) both;
+}
+
+.codex__page:not([hidden]) .codex__text > * {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fy: var(--travel-sm);
+}
+
+.codex__page:not([hidden]) .codex__text > :nth-child(2) {
+  animation-delay: var(--stagger);
+}
+
+.codex__page:not([hidden]) .codex__text > :nth-child(3) {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+.tablet__keys li {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fy: var(--travel-sm);
+}
+
+.tablet__keys li:nth-child(2) {
+  animation-delay: var(--stagger);
+}
+
+.tablet__keys li:nth-child(3) {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+.tablet__keys li:nth-child(n + 4) {
+  animation-delay: calc(3 * var(--stagger));
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    translate: var(--travel-sm) 0;
+  }
+}
+
+.codex__tab svg,
+.tablet__folder svg,
+.also__item svg {
+  transition: transform var(--dur) var(--ease);
+}
+
+.codex__tab:hover svg,
+.tablet__folder:hover svg,
+.also__item:hover svg {
+  transform: rotate(-8deg) scale(1.18);
+}
+
+.fighter__flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--dead);
+  animation: flash var(--dur-pop) var(--ease) both;
+}
+
+.fighter__flash--heal {
+  background: var(--alive);
+}
+
+@keyframes flash {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fighter__hp b,
+.tracker__round b {
+  display: inline-block;
+  animation: tick var(--dur) var(--ease) both;
+}
+
+@keyframes tick {
+  from {
+    opacity: 0;
+    translate: 0 calc(-1 * var(--travel-sm));
+  }
+}
+
+.fighter[data-active] .fighter__mark {
+  animation: pop var(--dur-pop) var(--ease) both;
+}
+
+.fighter[data-active] .fighter__ini {
+  animation: pop var(--dur-pop) var(--ease) both;
+}
+
+.fighter[data-down] .fighter__down svg {
+  animation: pop var(--dur-pop) var(--ease) both;
+}
+
+.dice__history li {
+  animation: pop var(--dur-pop) var(--ease) both;
+}
+
+.phones[data-in] .phone--l {
+  animation: fan-l var(--dur-slow) var(--ease) both;
+}
+
+.phones[data-in] .phone--r {
+  animation: fan-r var(--dur-slow) var(--ease) both;
+}
+
+@keyframes fan-l {
+  from {
+    transform: translateX(60%) rotate(0);
+  }
+}
+
+@keyframes fan-r {
+  from {
+    transform: translateX(-60%) rotate(0);
+  }
+}
+
+.phone {
+  transition: translate var(--dur) var(--ease);
+}
+
+.phone:hover {
+  translate: 0 calc(-1 * var(--travel-sm));
+}
+
+.obsband__vault [data-in] .vault__tree li {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fx: calc(-1 * var(--travel-sm));
+  --fy: 0px;
+}
+
+.vault__tree li:nth-child(2) {
+  animation-delay: var(--stagger);
+}
+
+.vault__tree li:nth-child(3) {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+.vault__tree li:nth-child(4) {
+  animation-delay: calc(3 * var(--stagger));
+}
+
+.vault__tree li:nth-child(5) {
+  animation-delay: calc(4 * var(--stagger));
+}
+
+.vault__tree li:nth-child(6) {
+  animation-delay: calc(5 * var(--stagger));
+}
+
+.route__stop[data-in] .route__pin {
+  animation: pop var(--dur-pop) var(--ease) var(--stagger) both;
+}
+
+.route__stop[data-in]::before {
+  animation: trail var(--dur-draw) var(--ease) calc(3 * var(--stagger)) both;
+}
+
+@keyframes trail {
+  to {
+    scale: 1 1;
+  }
+}
+
+.palette[open] {
+  animation: modal-in var(--dur) var(--ease) both;
+}
+
+.palette[open]::backdrop {
+  animation: fade var(--dur) var(--ease) both;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    translate: 0 calc(-1 * var(--travel-sm));
+    scale: 0.97;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .hero__sigil,
+  .faq__sigil,
+  .guide-hero__sigil,
+  .sigil--spin {
+    animation: turn linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+.sigil--spin-rev {
+  animation-direction: reverse;
+}
+
+@keyframes turn {
+  to {
+    rotate: 270deg;
+  }
+}
+
+.faq__turn {
+  transition: rotate var(--dur-slow) var(--ease);
+}
+
+.faq__sigil {
+  transition:
+    opacity var(--dur) var(--ease),
+    filter var(--dur) var(--ease);
+}
+
+.faq__orb[data-open] .faq__sigil {
+  opacity: 0.75;
+  filter: drop-shadow(0 0 var(--glow) var(--ember));
+}
+
+.faq__ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--ember);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ring var(--dur-slow) var(--ease) both;
+}
+
+@keyframes ring {
+  from {
+    opacity: 0.8;
+    scale: 0.6;
+  }
+
+  to {
+    opacity: 0;
+    scale: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .faq__sigil .sigil__ring {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .js .faq__sigil .sigil__tick,
+  .js .faq__sigil .sigil__rune,
+  .js .faq__sigil .sigil__star {
+    opacity: 0;
+  }
+}
+
+.faq__head[data-in] .sigil__ring {
+  animation: draw var(--dur-draw) var(--ease) calc(2 * var(--stagger)) both;
+}
+
+.faq__head[data-in] .sigil__tick,
+.faq__head[data-in] .sigil__rune,
+.faq__head[data-in] .sigil__star {
+  animation: appear var(--dur-slow) var(--ease) calc(6 * var(--stagger)) both;
+}
+
+.faq__list details {
+  transition: background var(--dur) var(--ease);
+}
+
+.faq__list details:nth-child(1) {
+  --i: 0;
+}
+
+.faq__list details:nth-child(2) {
+  --i: 1;
+}
+
+.faq__list details:nth-child(3) {
+  --i: 2;
+}
+
+.faq__list details:nth-child(4) {
+  --i: 3;
+}
+
+.faq__list details:nth-child(5) {
+  --i: 4;
+}
+
+.faq__list details:nth-child(6) {
+  --i: 5;
+}
+
+.faq__list details:nth-child(7) {
+  --i: 6;
+}
+
+.faq__list details:nth-child(8) {
+  --i: 7;
+}
+
+.faq__list details:nth-child(9) {
+  --i: 8;
+}
+
+.faq__list details[data-reveal] {
+  --fx: var(--travel-lg);
+  --fy: 0px;
+  animation-delay: calc(var(--i) * var(--stagger));
+}
+
+.faq__list details[data-state="open"] {
+  background: var(--bg-surface);
+}
+
+.faq__list summary {
+  padding-inline: 0;
+  transition:
+    padding var(--dur) var(--ease),
+    color var(--dur-fast);
+}
+
+.faq__list details[data-state="open"] summary,
+.faq__list summary:hover {
+  padding-inline: var(--space-5);
+}
+
+.faq__list summary > span {
+  display: inline-block;
+  background: linear-gradient(var(--ember), var(--ember)) 0 100% / 0 1px
+    no-repeat;
+  transition: background-size var(--dur) var(--ease);
+}
+
+.faq__list summary:hover > span,
+.faq__list details[data-state="open"] summary > span {
+  background-size: 100% 1px;
+}
+
+.faq__list summary svg {
+  transition:
+    transform var(--dur) var(--ease),
+    scale var(--dur) var(--ease);
+}
+
+.faq__list details[data-state="open"] summary svg {
+  scale: 1.2;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.sync__page:not([hidden]) {
+  animation: page-in var(--dur) var(--ease) both;
+}
+
+.sync__page:not([hidden]) .sync__when {
+  animation: rise var(--dur-reveal) var(--ease) var(--stagger) both;
+  --fy: var(--travel-sm);
+}
+
+.sync__page:not([hidden]) .sync__steps li {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fx: calc(-1 * var(--travel-sm));
+  --fy: 0px;
+  animation-delay: calc(3 * var(--stagger));
+}
+
+.sync__page:not([hidden]) .sync__steps li:nth-child(2) {
+  animation-delay: calc(4.5 * var(--stagger));
+}
+
+.sync__page:not([hidden]) .sync__steps li:nth-child(3) {
+  animation-delay: calc(6 * var(--stagger));
+}
+
+.sync__page:not([hidden]) .sync__steps li:nth-child(4) {
+  animation-delay: calc(7.5 * var(--stagger));
+}
+
+.sync__page:not([hidden]) .sync__steps li::before {
+  animation: pop var(--dur-pop) var(--ease) both;
+  animation-delay: inherit;
+}
+
+.sync__page:not([hidden]) .sync__steps li::after {
+  animation: trail var(--dur-draw) var(--ease) both;
+  animation-delay: inherit;
+  transform-origin: top;
+}
+
+.sync__page:not([hidden]) .sync__watch {
+  animation: rise var(--dur-slow) var(--ease) calc(4 * var(--stagger)) both;
+  --fx: var(--travel-lg);
+  --fy: 0px;
+}
+
+.sync__page:not([hidden]) .sync__files dl > div {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  --fy: var(--travel-sm);
+}
+
+.sync__page:not([hidden]) .sync__files dl > div:nth-child(2) {
+  animation-delay: var(--stagger);
+}
+
+.sync__page:not([hidden]) .sync__files dl > div:nth-child(3) {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+.sync__page:not([hidden]) .sync__files dl > div:nth-child(4) {
+  animation-delay: calc(3 * var(--stagger));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .sync__steps li::before,
+  .js .sync__steps li::after {
+    scale: 0;
+  }
+}
+
+/* FAQ answers: the row grows and the text wipes in on open; the same transitions run backwards on close. */
+.faq__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur) var(--ease);
+}
+
+.faq__answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.faq__answer p {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  translate: 0 calc(-1 * var(--travel-sm));
+  transition:
+    opacity var(--dur) var(--ease),
+    clip-path var(--dur-slow) var(--ease),
+    translate var(--dur) var(--ease);
+}
+
+.faq__answer p::before {
+  scale: 0;
+  transition: scale var(--dur) var(--ease);
+}
+
+.faq__list details[data-state="open"] .faq__answer {
+  grid-template-rows: 1fr;
+}
+
+.faq__list details[data-state="open"] .faq__answer p {
+  opacity: 1;
+  clip-path: inset(0);
+  translate: 0 0;
+  transition-delay: var(--stagger);
+}
+
+.faq__list details[data-state="open"] .faq__answer p::before {
+  scale: 1;
+  transition-delay: calc(2 * var(--stagger));
+  transition-timing-function: var(--ease-pop);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .rules__icon::after {
+    scale: 0;
+    transform-origin: bottom left;
+  }
+}
+
+.rules__list li[data-in] .rules__icon::after {
+  animation: slash var(--dur-slow) var(--ease) calc(2 * var(--stagger)) both;
+}
+
+@keyframes slash {
+  to {
+    scale: 1;
+  }
+}

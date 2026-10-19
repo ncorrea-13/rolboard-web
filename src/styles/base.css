@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: clip;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-canvas);
+  color: var(--text-body);
+  font: 400 1.0625rem/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--violet);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: var(--offset);
+}
+
+:focus-visible {
+  outline: var(--stroke) solid var(--focus);
+  outline-offset: var(--offset);
+  border-radius: var(--radius-sm);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 144;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-variation-settings: "opsz" 36;
+}
+
+code,
+kbd {
+  font: 400 0.88em var(--font-mono);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  padding: 1px var(--pad-code);
+  border-radius: var(--radius-xs);
+}
+
+.eyebrow {
+  font: italic 500 1.05rem var(--font-display);
+  font-variation-settings:
+    "opsz" 24,
+    "WONK" 1;
+  color: var(--ember);
+  margin-bottom: var(--space-2);
+}
+
+.skip {
+  position: absolute;
+  left: var(--space-3);
+  top: -4rem;
+  z-index: 50;
+  padding: var(--space-2) var(--space-4);
+  background: var(--violet);
+  color: var(--on-violet);
+  border-radius: var(--radius-md);
+}
+
+.skip:focus {
+  top: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0 1.4rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: 600 0.95rem var(--font-body);
+  cursor: pointer;
+  transition:
+    background var(--dur-fast),
+    border-color var(--dur-fast),
+    transform var(--dur-fast) var(--ease);
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--primary {
+  background: var(--violet);
+  color: var(--on-violet);
+  border-radius: 0;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--notch)) 0,
+    100% var(--notch),
+    100% 100%,
+    0 100%
+  );
+}
+
+.btn--primary:hover {
+  background: var(--violet-hi);
+}
+
+.btn--primary:focus-visible {
+  clip-path: none;
+  border-radius: var(--radius-md);
+}
+
+.btn--ghost {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.btn--ghost:hover {
+  border-color: var(--violet);
+}
+
+.btn--sm {
+  min-height: var(--ctl-sm);
+  padding: 0 1rem;
+  font-size: 0.85rem;
+}
+
+.icon-link {
+  display: inline-grid;
+  place-items: center;
+  width: var(--ctl);
+  height: var(--ctl);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--pill);
+  color: var(--text-body);
+  transition:
+    border-color var(--dur-fast),
+    color var(--dur-fast),
+    background var(--dur-fast);
+}
+
+.icon-link:hover {
+  border-color: var(--violet);
+  background: var(--violet-soft);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Reveal on scroll: one-shot, input driven, and never hides content without JS. */
+.js [data-reveal]:not([data-in]) {
+  opacity: 0;
+}
+
+[data-reveal][data-in] {
+  animation: rise var(--dur-reveal) var(--ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: var(--fx, 0) var(--fy, var(--rise));
+    scale: var(--fs, 1);
+  }
+}
+
+[data-reveal="left"] {
+  --fx: calc(-1 * var(--travel-lg));
+  --fy: 0px;
+}
+
+[data-reveal="right"] {
+  --fx: var(--travel-lg);
+  --fy: 0px;
+}
+
+[data-reveal="scale"] {
+  --fs: 0.9;
+  --fy: 0px;
+}
+
+[data-reveal]:nth-child(3n + 2) {
+  animation-delay: var(--stagger);
+}
+
+[data-reveal]:nth-child(3n + 3) {
+  animation-delay: calc(2 * var(--stagger));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js [data-reveal]:not([data-in]) {
+    opacity: 1;
+  }
+}

@@ -9,22 +9,23 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7.1.0
         with:
           node-version: 24
-      - run: node --check site.js
-      - run: npx --yes html-validate@11.16.4 index.html obsidian.html
-
-  links:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
+      # pnpm version comes from "packageManager" in package.json
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - run: npx --yes html-validate@11.16.4 dist/*.html
       - uses: lycheeverse/lychee-action@v2.9.0
         with:
-          # linkedin answers 999 to bots; fonts hosts are preconnect-only
-          args: --no-progress --root-dir ${{ github.workspace }} --exclude linkedin.com --exclude fonts.g '*.html' '*.md'
+          # linkedin answers 999 to bots; the dist pages hold no external font hosts any more
+          args: --no-progress --root-dir ${{ github.workspace }}/dist --fallback-extensions html --exclude linkedin.com 'dist/*.html' '*.md'
           fail: true

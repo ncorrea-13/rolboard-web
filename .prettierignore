@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+dist
+dist-ssr
+public
+docs
+*.md
+wrangler.jsonc
+.htmlvalidate.json
+.github
