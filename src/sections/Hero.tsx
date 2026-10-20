@@ -86,9 +86,6 @@ export function Hero({ dl }: { dl: Downloads }) {
           <InitiativeTracker />
         </Frame>
         <DiceRoller />
-        <p className="hero__hint">
-          <T k="demo.hint" />
-        </p>
       </div>
       <div className="hero__rule">
         <Crack />

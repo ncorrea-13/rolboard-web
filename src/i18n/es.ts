@@ -115,7 +115,6 @@ export const es = {
   "demo.heal": "Sumar 1 punto de vida a",
   "demo.down": "Caído",
   "demo.turn": "Turno de",
-  "demo.hint": "Tócalo: es el tracker de verdad, con datos inventados.",
   "dice.title": "Rolboard no tira dados. Este sí.",
   "dice.roll": "Tirar un d20",
   "dice.result": "Resultado",

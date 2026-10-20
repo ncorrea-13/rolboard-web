@@ -123,11 +123,6 @@
   opacity: 0.22;
 }
 
-.hero__hint {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-}
-
 @media (min-width: 560px) {
   .hero__cta .btn {
     flex: 0 0 auto;

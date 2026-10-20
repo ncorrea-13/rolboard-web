@@ -116,7 +116,6 @@ export const en: Record<Key, string> = {
   "demo.heal": "Add 1 hit point to",
   "demo.down": "Down",
   "demo.turn": "Turn of",
-  "demo.hint": "Go ahead, touch it: it's the real tracker, with made-up data.",
   "dice.title": "Rolboard doesn't roll dice. This one does.",
   "dice.roll": "Roll a d20",
   "dice.result": "Result",
