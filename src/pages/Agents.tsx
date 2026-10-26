@@ -1,17 +1,15 @@
 import { Layout } from "../components/Layout";
 import { Crack } from "../components/Ornaments";
-import { AgentsClients } from "../sections/AgentsClients";
 import { AgentsHero } from "../sections/AgentsHero";
 import { AgentsLimits } from "../sections/AgentsLimits";
-import { AgentsSteps } from "../sections/AgentsSteps";
+import { AgentsPaths } from "../sections/AgentsPaths";
 
 export function Agents() {
   return (
     <Layout page="agents">
       <AgentsHero />
       <Crack />
-      <AgentsSteps />
-      <AgentsClients />
+      <AgentsPaths />
       <AgentsLimits />
     </Layout>
   );

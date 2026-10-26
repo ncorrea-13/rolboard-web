@@ -336,28 +336,29 @@ export const es = {
   "a.cta.download": "Descargar Rolboard",
   "a.cta.steps": "Ver cómo conectar",
   "a.steps.eyebrow": "Cómo conectar",
-  "a.steps.title": "Dos caminos, según cómo uses Rolboard",
-  "a.s1.title": "Con la app de escritorio",
-  "a.s1.text":
-    "En <em>Ajustes de la app</em> activa <em>Permitir que agentes de IA se conecten</em> y pulsa <em>Conectar</em> en tu cliente. Rolboard se agrega solo a su configuración, y antes guarda una copia del archivo. Funciona mientras la app esté abierta.",
-  "a.s2.title": "Con un servidor Docker",
-  "a.s2.text":
-    "Descarga <code>rolboard-mcp</code> y ejecuta <code>rolboard-mcp login</code> una vez: pide el código de acceso de la campaña sin mostrarlo y lo guarda en tu equipo. Después, <em>Conectar un agente de IA</em>, en los ajustes de la campaña, arma el comando de cada cliente.",
-  "a.s3.title": "Pídele lo que necesites",
-  "a.s3.text":
-    "Pregunta por un NPC, pide el resumen de la última sesión o ayuda con la preparación de la próxima. El asistente lee tu campaña y puede dejar notas, NPCs, quests y lore nuevos.",
-  "a.clients.eyebrow": "Clientes",
-  "a.clients.title": "Con qué programas funciona",
   "a.link.rolboard": "Rolboard",
   "a.link.assistant": "Tu asistente",
   "a.link.label": "Rolboard se conecta a tu asistente de IA por MCP",
-  "a.term.eyebrow": "Con Docker, en una terminal",
-  "a.term.label": "Comandos de ejemplo para conectar con Docker",
-  "a.m.command": "Comando",
-  "a.m.config": "Configuración lista",
-  "a.clients.lead":
-    "Con la app de escritorio, un botón conecta a cualquiera de ellos. Con Docker, algunos tienen un comando y otros piden pegar una configuración, que Rolboard te arma.",
-  "a.clients.android": "No está disponible en Android.",
+  "a.paths.title": "Según dónde corre tu Rolboard",
+  "a.p1.title": "App de escritorio",
+  "a.p1.where": "Windows y Linux",
+  "a.p1.s1":
+    "Abre <em>Ajustes de la app</em> y activa <em>Permitir que agentes de IA se conecten</em>.",
+  "a.p1.s2":
+    "Pulsa <em>Conectar</em> en tu cliente. Rolboard se agrega solo a su configuración y antes guarda una copia del archivo.",
+  "a.p1.s3": "Reinicia el cliente y pídele algo de tu campaña.",
+  "a.p1.note": "La app tiene que estar abierta mientras el asistente trabaja.",
+  "a.p2.title": "Servidor Docker",
+  "a.p2.where": "Desde tu computadora",
+  "a.p2.s1":
+    "Descarga <code>rolboard-mcp</code>, el programa que une a tu asistente con el servidor.",
+  "a.p2.s2":
+    "Ejecuta <code>rolboard-mcp login</code> una vez. Te pide el código de acceso de la campaña sin mostrarlo y lo guarda en tu equipo.",
+  "a.p2.s3":
+    "En los ajustes de la campaña, <em>Conectar un agente de IA</em> arma el comando o la configuración de tu cliente.",
+  "a.p2.note":
+    "Cada campaña tiene su propio código: una conexión, una campaña.",
+  "a.android": "No está disponible en Android.",
   "a.limits.eyebrow": "Límites",
   "a.limits.title": "Qué puede y qué no puede hacer",
   "a.d1.title": "Lee casi todo",

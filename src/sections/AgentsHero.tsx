@@ -28,8 +28,8 @@ export function AgentsHero() {
             className="agents-link__logo"
             src="/assets/logo-icon.png"
             alt=""
-            width="64"
-            height="64"
+            width="96"
+            height="96"
           />
           <span className="agents-link__name">
             <T k="a.link.rolboard" />

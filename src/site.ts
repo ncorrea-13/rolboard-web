@@ -100,7 +100,6 @@ export const OBSIDIAN_SECTIONS: Anchor[] = [
 
 export const AGENTS_SECTIONS: Anchor[] = [
   { label: "a.steps.eyebrow", href: "/agents#how-it-works" },
-  { label: "a.clients.eyebrow", href: "/agents#clients" },
   { label: "a.limits.eyebrow", href: "/agents#limits" },
 ];
 

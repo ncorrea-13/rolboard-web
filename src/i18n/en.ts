@@ -336,28 +336,28 @@ export const en: Record<Key, string> = {
   "a.cta.download": "Download Rolboard",
   "a.cta.steps": "See how to connect",
   "a.steps.eyebrow": "How to connect",
-  "a.steps.title": "Two paths, depending on how you use Rolboard",
-  "a.s1.title": "With the desktop app",
-  "a.s1.text":
-    "In <em>App settings</em> turn on <em>Let AI agents connect</em> and press <em>Connect</em> on your client. Rolboard adds itself to its configuration, saving a copy of the file first. It works while the app is open.",
-  "a.s2.title": "With a Docker server",
-  "a.s2.text":
-    "Download <code>rolboard-mcp</code> and run <code>rolboard-mcp login</code> once: it asks for the campaign's access code without showing it and saves it on your computer. Then <em>Connect an AI agent</em>, in the campaign settings, builds each client's command.",
-  "a.s3.title": "Ask for what you need",
-  "a.s3.text":
-    "Ask about an NPC, ask for a recap of the last session or for help preparing the next one. The assistant reads your campaign and can leave new notes, NPCs, quests and lore.",
-  "a.clients.eyebrow": "Clients",
-  "a.clients.title": "Which programs it works with",
   "a.link.rolboard": "Rolboard",
   "a.link.assistant": "Your assistant",
   "a.link.label": "Rolboard connects to your AI assistant through MCP",
-  "a.term.eyebrow": "With Docker, in a terminal",
-  "a.term.label": "Example commands to connect with Docker",
-  "a.m.command": "Command",
-  "a.m.config": "Ready-made config",
-  "a.clients.lead":
-    "With the desktop app, one button connects any of them. With Docker, some have a command and others need a configuration pasted in, which Rolboard builds for you.",
-  "a.clients.android": "It isn't available on Android.",
+  "a.paths.title": "Depending on where your Rolboard runs",
+  "a.p1.title": "Desktop app",
+  "a.p1.where": "Windows and Linux",
+  "a.p1.s1":
+    "Open <em>App settings</em> and turn on <em>Let AI agents connect</em>.",
+  "a.p1.s2":
+    "Press <em>Connect</em> on your client. Rolboard adds itself to its configuration and saves a copy of the file first.",
+  "a.p1.s3": "Restart the client and ask it something about your campaign.",
+  "a.p1.note": "The app has to be open while the assistant works.",
+  "a.p2.title": "Docker server",
+  "a.p2.where": "From your computer",
+  "a.p2.s1":
+    "Download <code>rolboard-mcp</code>, the program that links your assistant to the server.",
+  "a.p2.s2":
+    "Run <code>rolboard-mcp login</code> once. It asks for the campaign's access code without showing it and saves it on your computer.",
+  "a.p2.s3":
+    "In the campaign settings, <em>Connect an AI agent</em> builds the command or configuration for your client.",
+  "a.p2.note": "Each campaign has its own code: one connection, one campaign.",
+  "a.android": "It isn't available on Android.",
   "a.limits.eyebrow": "Limits",
   "a.limits.title": "What it can and can't do",
   "a.d1.title": "Reads almost everything",
