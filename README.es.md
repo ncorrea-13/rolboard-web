@@ -23,6 +23,7 @@ Sitio que presenta [Rolboard](https://github.com/ncorrea-13/rolboard) y enlaza s
 | ----------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Inicio      | `/`         | Hero con un tracker de iniciativa y un d20 jugables, las funciones en pestañas, Android, el adelanto de Obsidian y las reglas de la casa |
 | Obsidian    | `/obsidian` | Cómo un vault se convierte en fichas: pasos, una guía interactiva de carpetas con las claves reales del frontmatter y una nota de ejemplo |
+| IA          | `/agents`   | Cómo conectar Claude, OpenCode, Codex y Antigravity por MCP: caminos de escritorio y Docker, clientes compatibles y límites |
 | Preguntas   | `/faq`      | Preguntas generales, una guía de sincronización que sirve con cualquier herramienta (o ninguna) y los links para reportar errores |
 | Descargas   | `/download` | Instaladores con la plataforma del visitante primero, la versión actual y las preguntas sobre instalar                      |
 
