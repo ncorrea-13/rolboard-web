@@ -255,6 +255,13 @@ export const es = {
   "dl.server.btn": "Ver instalación con Docker",
   "dl.server.note":
     "Para usarlo desde la tablet o el celular en la mesa, con clave de admin y código por campaña.",
+  "dl.mcp.title": "Para conectar un asistente de IA",
+  "dl.mcp.lead":
+    "Es el programa que une a tu asistente (Claude, OpenCode, Codex, Antigravity) con el servidor. Solo hace falta con la versión Docker: la app de escritorio ya trae la conexión incluida. Lo usas una vez con <code>login</code> y después lo lanza el propio asistente.",
+  "dl.mcp.linux.note": "Dale permiso de ejecución con <code>chmod +x</code>.",
+  "dl.mcp.linux.btn": "Descargar rolboard-mcp para Linux",
+  "dl.mcp.win.btn": "Descargar rolboard-mcp para Windows",
+  "dl.mcp.link": "Ver cómo conectar",
   "dl.all": "Todas las versiones",
   "dl.recommended": "Recomendado para tu equipo",
   "dl.version": "Versión actual",
