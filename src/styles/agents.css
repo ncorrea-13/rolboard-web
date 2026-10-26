@@ -1,0 +1,209 @@
+/* The AI agents page. Shapes and tokens follow the guide pages. */
+
+.agents-hero {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.agents-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.agents-link__node {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  width: 10.5rem;
+  padding: var(--space-6) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+
+.agents-link__node svg {
+  color: var(--violet-hi);
+}
+
+.agents-link__logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+.agents-link__name {
+  font: 600 0.95rem var(--font-display);
+}
+
+/* Line, MCP tag, line: runs down on a phone and across on a desktop. */
+.agents-link__wire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agents-link__wire::before,
+.agents-link__wire::after {
+  content: "";
+  width: var(--stroke);
+  height: var(--space-6);
+  background: var(--violet);
+}
+
+.agents-link__tag {
+  padding: var(--pad-chip-y) var(--pad-chip-x);
+  background: var(--violet-soft);
+  border: 1px solid var(--violet);
+  border-radius: var(--pill);
+  color: var(--text-primary);
+  font: 500 0.75rem var(--font-mono);
+}
+
+.agents-paths {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.agents-path {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.agents-path__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.agents-path__head svg {
+  color: var(--ember);
+}
+
+.agents-path__head h3 {
+  font-size: 1.4rem;
+}
+
+.agents-path__where {
+  margin-left: auto;
+  padding: var(--pad-chip-y) var(--pad-chip-x);
+  background: var(--violet-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--pill);
+  color: var(--text-body);
+  font: 500 0.75rem var(--font-mono);
+}
+
+.agents-path__steps {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding-left: var(--space-5);
+  color: var(--text-body);
+}
+
+.agents-path__steps li::marker {
+  color: var(--violet-hi);
+  font-weight: 700;
+}
+
+.agents-path__note {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.agents-android {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.agents-limits {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agents-limits__item {
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.agents-limits__item svg {
+  color: var(--ember);
+}
+
+.agents-limits__item[data-lead] {
+  align-content: start;
+  padding: var(--space-5);
+  background: var(--ember-soft);
+  border: 1px solid var(--ember);
+  border-radius: var(--radius-lg);
+  color: var(--text-body);
+}
+
+.agents-limits__item[data-lead] h3 {
+  font-size: 1.7rem;
+}
+
+.agents-limits__item[data-lead] p {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 960px) {
+  .agents-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .agents-link {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .agents-link__wire {
+    flex: 1;
+    flex-direction: row;
+    align-self: center;
+    min-width: var(--space-7);
+  }
+
+  .agents-link__wire::before,
+  .agents-link__wire::after {
+    flex: 1;
+    width: auto;
+    height: var(--stroke);
+  }
+
+  .agents-paths {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .agents-limits {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5) var(--space-7);
+  }
+
+  .agents-limits__item[data-lead] {
+    grid-column: 1 / -1;
+  }
+}

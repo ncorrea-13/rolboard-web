@@ -3,10 +3,18 @@ import { useEffect, useState } from "react";
 export type Platform = "windows" | "linux" | "android";
 
 const RELEASES = "https://github.com/ncorrea-13/rolboard/releases/latest";
+// Anchored: the release also holds rolboard-mcp-windows-amd64-*.exe, which is not the app.
 const PATTERNS: Record<Platform, RegExp> = {
-  windows: /windows-amd64.*\.exe$/,
-  linux: /linux-(amd64|x86_64).*\.AppImage$/,
+  windows: /^rolboard-windows-amd64.*\.exe$/,
+  linux: /^rolboard-linux-(amd64|x86_64).*\.AppImage$/,
   android: /android-arm64.*\.apk$/,
+};
+
+export type McpPlatform = "windows" | "linux";
+
+const MCP_PATTERNS: Record<McpPlatform, RegExp> = {
+  windows: /^rolboard-mcp-windows-amd64.*\.exe$/,
+  linux: /^rolboard-mcp-linux-amd64/,
 };
 
 function detectOS(): Platform | null {
@@ -24,6 +32,10 @@ export function useDownloads() {
     windows: RELEASES,
     linux: RELEASES,
     android: RELEASES,
+  });
+  const [mcp, setMcp] = useState<Record<McpPlatform, string>>({
+    windows: RELEASES,
+    linux: RELEASES,
   });
 
   useEffect(() => {
@@ -46,10 +58,20 @@ export function useDownloads() {
           }
           return next;
         });
+        setMcp((prev) => {
+          const next = { ...prev };
+          for (const p of Object.keys(MCP_PATTERNS) as McpPlatform[]) {
+            const asset = release.assets?.find((a: { name: string }) =>
+              MCP_PATTERNS[p].test(a.name),
+            );
+            if (asset) next[p] = asset.browser_download_url;
+          }
+          return next;
+        });
       })
       .catch(() => {});
     return () => ctrl.abort();
   }, []);
 
-  return { os, tag, urls };
+  return { os, tag, urls, mcp };
 }

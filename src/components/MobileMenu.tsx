@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { Sigil } from "./Ornaments";
 import { Label, T, useLang } from "../i18n/lang";
 import {
+  AGENTS_SECTIONS,
   FAQ_SECTIONS,
   HOME_SECTIONS,
   OBSIDIAN_SECTIONS,
@@ -14,6 +15,7 @@ import {
 const SECTIONS: Partial<Record<PageId, Anchor[]>> = {
   index: HOME_SECTIONS,
   obsidian: OBSIDIAN_SECTIONS,
+  agents: AGENTS_SECTIONS,
   faq: FAQ_SECTIONS,
 };
 

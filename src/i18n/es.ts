@@ -255,6 +255,12 @@ export const es = {
   "dl.server.btn": "Ver instalación con Docker",
   "dl.server.note":
     "Para usarlo desde la tablet o el celular en la mesa, con clave de admin y código por campaña.",
+  "dl.mcp.title": "Para conectar un asistente de IA",
+  "dl.mcp.lead": "Solo para la versión de servidor.",
+  "dl.mcp.linux.note": "Dale permiso de ejecución con <code>chmod +x</code>.",
+  "dl.mcp.linux.btn": "Descargar rolboard-mcp para Linux",
+  "dl.mcp.win.btn": "Descargar rolboard-mcp para Windows",
+  "dl.mcp.link": "Ver cómo conectar",
   "dl.all": "Todas las versiones",
   "dl.recommended": "Recomendado para tu equipo",
   "dl.version": "Versión actual",
@@ -325,6 +331,54 @@ export const es = {
   "g.more.text":
     "¿Quieres el detalle completo de cada clave y de cómo se resuelven los enlaces?",
   "g.more.link": "Leer la referencia técnica",
+  "meta.agents.title":
+    "Rolboard con IA: conecta Claude, OpenCode, Codex y Antigravity",
+  "meta.agents.description":
+    "Conecta tu campaña de Rolboard a un asistente de IA con MCP: que busque, resuma y te ayude a preparar sesiones. Sin claves de API. Funciona con Claude, OpenCode, Codex y Antigravity.",
+  "nav.agents": "IA",
+  "a.title": "Tu campaña, a la mano de tu asistente de IA.",
+  "a.lead":
+    "Rolboard habla MCP: Claude, OpenCode, Codex y Antigravity pueden buscar en tu campaña, resumir una sesión o ayudarte a preparar la siguiente. Sin claves de API ni cuentas nuevas.",
+  "a.cta.download": "Descargar Rolboard",
+  "a.cta.steps": "Ver cómo conectar",
+  "a.steps.eyebrow": "Cómo conectar",
+  "a.link.rolboard": "Rolboard",
+  "a.link.assistant": "Tu asistente",
+  "a.link.label": "Rolboard se conecta a tu asistente de IA por MCP",
+  "a.paths.title": "Según dónde corre tu Rolboard",
+  "a.p1.title": "App de escritorio",
+  "a.p1.where": "Windows y Linux",
+  "a.p1.s1":
+    "Abre <em>Ajustes de la app</em> y activa <em>Permitir que agentes de IA se conecten</em>.",
+  "a.p1.s2":
+    "Pulsa <em>Conectar</em> en tu cliente. Rolboard se agrega solo a su configuración y antes guarda una copia del archivo.",
+  "a.p1.s3": "Reinicia el cliente y pídele algo de tu campaña.",
+  "a.p1.note": "La app tiene que estar abierta mientras el asistente trabaja.",
+  "a.p2.title": "Servidor Docker",
+  "a.p2.where": "Desde tu computadora",
+  "a.p2.s1":
+    "Descarga <code>rolboard-mcp</code>, el programa que une a tu asistente con el servidor.",
+  "a.p2.s2":
+    "Ejecuta <code>rolboard-mcp login</code> una vez. Te pide el código de acceso de la campaña sin mostrarlo y lo guarda en tu equipo.",
+  "a.p2.s3":
+    "En los ajustes de la campaña, <em>Conectar un agente de IA</em> arma el comando o la configuración de tu cliente.",
+  "a.p2.note":
+    "Cada campaña tiene su propio código: una conexión, una campaña.",
+  "a.android": "No está disponible en Android.",
+  "a.limits.eyebrow": "Límites",
+  "a.limits.title": "Qué puede y qué no puede hacer",
+  "a.d1.title": "Lee casi todo",
+  "a.d1.text":
+    "Fichas, sesiones, notas y secretos incluidos. Lo que lee viaja al servicio de IA que uses: si no quieres que un secreto salga de tu equipo, no conectes ese cliente.",
+  "a.d2.title": "Escribe poco",
+  "a.d2.text":
+    "Crea notas sueltas, NPCs, quests y entradas de lore, y edita la preparación de una sesión. No borra nada.",
+  "a.d3.title": "Sin claves ni red pública",
+  "a.d3.text":
+    "En escritorio la conexión pasa por un socket local, solo para tu usuario. Con Docker usa el código de acceso de cada campaña: una conexión, una campaña.",
+  "faq.agentsq": "¿Puedo usar un asistente de IA con mi campaña?",
+  "faq.agentsa":
+    'Sí, con cualquier programa que hable MCP: Claude, OpenCode, Codex y Antigravity, sin claves de API. Puede leer tu campaña y crear notas, NPCs, quests y lore, pero no borra nada. Los pasos están en la <a href="/agents">página de IA</a>.',
 } as const;
 
 export type Key = keyof typeof es;

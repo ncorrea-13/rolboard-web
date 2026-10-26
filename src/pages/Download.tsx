@@ -2,6 +2,7 @@ import { Layout } from "../components/Layout";
 import { PageHead } from "../components/PageHead";
 import { useDownloads } from "../hooks/useDownloads";
 import { Downloads } from "../sections/Downloads";
+import { McpDownloads } from "../sections/McpDownloads";
 import { InstallHelp } from "../sections/InstallHelp";
 
 export function Download() {
@@ -10,6 +11,7 @@ export function Download() {
     <Layout page="download">
       <PageHead aura eyebrow="dl.eyebrow" title="dl.title" lead="dl.sub" />
       <Downloads dl={dl} />
+      <McpDownloads dl={dl} />
       <InstallHelp />
     </Layout>
   );
