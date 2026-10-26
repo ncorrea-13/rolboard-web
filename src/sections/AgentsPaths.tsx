@@ -63,7 +63,7 @@ export function AgentsPaths() {
           </article>
         ))}
       </div>
-      <p className="agents-android">
+      <p className="agents-android" data-reveal>
         <T k="a.android" />
       </p>
     </section>

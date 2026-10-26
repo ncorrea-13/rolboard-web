@@ -678,3 +678,133 @@
     scale: 1;
   }
 }
+
+/* The AI agents page. Hero plays on load; the cards play when their reveal fires ([data-in]);
+   hover and focus are the only other triggers. */
+
+.agents-hero .guide-hero__copy > * {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+.agents-hero .guide-hero__copy > :nth-child(2) {
+  --i: 1;
+}
+
+.agents-hero .guide-hero__copy > :nth-child(3) {
+  --i: 2;
+}
+
+.agents-hero .guide-hero__copy > :nth-child(4) {
+  --i: 3;
+}
+
+.agents-hero .guide-hero__copy > :nth-child(5) {
+  --i: 4;
+}
+
+/* The diagram assembles in order: node, line out, MCP tag, line in, node. */
+.agents-link__node {
+  animation: agents-in var(--dur-pop) var(--ease) calc(3 * var(--stagger)) both;
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+}
+
+.agents-link__node:last-child {
+  animation-delay: calc(7 * var(--stagger));
+}
+
+.agents-link__node:hover {
+  border-color: var(--violet);
+  translate: 0 calc(-1 * var(--offset));
+}
+
+.agents-link__wire::before,
+.agents-link__wire::after {
+  --wire-from: 1 0;
+  transform-origin: top;
+  animation: agents-wire var(--dur-draw) var(--ease) calc(4 * var(--stagger))
+    both;
+}
+
+.agents-link__wire::after {
+  animation-delay: calc(6 * var(--stagger));
+}
+
+.agents-link__tag {
+  animation: agents-in var(--dur-pop) var(--ease) calc(5.5 * var(--stagger))
+    both;
+}
+
+.agents-path,
+.agents-limits__item[data-lead] {
+  transition:
+    border-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+}
+
+.agents-path:hover,
+.agents-limits__item[data-lead]:hover {
+  border-color: var(--violet);
+  translate: 0 calc(-1 * var(--offset));
+}
+
+.agents-limits__item[data-lead]:hover {
+  border-color: var(--ember);
+}
+
+.agents-path[data-in] .agents-path__steps li,
+.agents-path[data-in] .agents-path__note {
+  animation: rise var(--dur-reveal) var(--ease) both;
+  animation-delay: calc(var(--i, 1) * var(--stagger));
+}
+
+.agents-path__steps li:nth-child(2) {
+  --i: 2;
+}
+
+.agents-path__steps li:nth-child(3) {
+  --i: 3;
+}
+
+.agents-path__note {
+  --i: 4;
+}
+
+.agents-limits__item[data-in] svg {
+  animation: agents-in var(--dur-pop) var(--ease) calc(2 * var(--stagger)) both;
+}
+
+.agents-limits__item svg {
+  transition: translate var(--dur) var(--ease);
+}
+
+.agents-limits__item:hover svg {
+  translate: var(--offset) 0;
+}
+
+.agents-android[data-in] {
+  animation: rise var(--dur-reveal) var(--ease) both;
+}
+
+@keyframes agents-in {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+}
+
+@keyframes agents-wire {
+  from {
+    scale: var(--wire-from);
+  }
+}
+
+@media (min-width: 960px) {
+  .agents-link__wire::before,
+  .agents-link__wire::after {
+    --wire-from: 0 1;
+    transform-origin: left;
+  }
+}
