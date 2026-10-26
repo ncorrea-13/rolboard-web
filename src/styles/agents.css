@@ -1,0 +1,207 @@
+/* The AI agents page. Shapes and tokens follow the guide pages. */
+
+.agents-hero {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.agents-link {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.agents-link__node {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  width: 9.5rem;
+  padding: var(--space-5) var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+
+.agents-link__node svg {
+  color: var(--violet-hi);
+}
+
+.agents-link__logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.agents-link__name {
+  font: 600 0.95rem var(--font-display);
+}
+
+/* The wire runs down on a phone and across on a desktop. */
+.agents-link__wire {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--stroke);
+  height: var(--space-7);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--violet) 0 var(--dash),
+    transparent var(--dash) var(--dash-gap)
+  );
+}
+
+.agents-link__tag {
+  padding: var(--pad-chip-y) var(--pad-chip-x);
+  background: var(--violet-soft);
+  border: 1px solid var(--violet);
+  border-radius: var(--pill);
+  color: var(--text-primary);
+  font: 500 0.75rem var(--font-mono);
+}
+
+.agents-term {
+  margin-top: var(--space-6);
+}
+
+.agents-term__label {
+  margin-bottom: var(--space-2);
+  color: var(--text-secondary);
+  font: 500 0.8rem var(--font-mono);
+}
+
+.agents-term__code {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-body);
+  font: 400 0.8rem/1.6 var(--font-mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.agents-clients {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agents-clients__item {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.agents-clients__item svg {
+  color: var(--ember);
+}
+
+.agents-clients__item h3 {
+  font-size: 1.15rem;
+}
+
+.agents-clients__tag {
+  justify-self: start;
+  padding: var(--pad-chip-y) var(--pad-chip-x);
+  background: var(--violet-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--pill);
+  color: var(--text-body);
+  font: 500 0.75rem var(--font-mono);
+}
+
+/* Not a client: it takes the empty cell and says where the feature stops. */
+.agents-clients__item--off {
+  align-content: center;
+  background: none;
+  border-style: dashed;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.agents-limits {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agents-limits__item {
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.agents-limits__item svg {
+  color: var(--ember);
+}
+
+.agents-limits__item[data-lead] {
+  align-content: start;
+  padding: var(--space-5);
+  background: var(--ember-soft);
+  border: 1px solid var(--ember);
+  border-radius: var(--radius-lg);
+  color: var(--text-body);
+}
+
+.agents-limits__item[data-lead] h3 {
+  font-size: 1.7rem;
+}
+
+.agents-limits__item[data-lead] p {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 720px) {
+  .agents-clients {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .agents-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .agents-link {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .agents-link__wire {
+    width: auto;
+    height: var(--stroke);
+    min-width: var(--space-8);
+    background: repeating-linear-gradient(
+      to right,
+      var(--violet) 0 var(--dash),
+      transparent var(--dash) var(--dash-gap)
+    );
+  }
+
+  .agents-clients {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .agents-limits {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-5) var(--space-7);
+  }
+
+  .agents-limits__item[data-lead] {
+    grid-row: 1 / span 2;
+  }
+}

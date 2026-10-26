@@ -348,8 +348,16 @@ export const es = {
     "Pregunta por un NPC, pide el resumen de la última sesión o ayuda con la preparación de la próxima. El asistente lee tu campaña y puede dejar notas, NPCs, quests y lore nuevos.",
   "a.clients.eyebrow": "Clientes",
   "a.clients.title": "Con qué programas funciona",
-  "a.clients.text":
-    "<strong>Claude Code</strong>, <strong>Claude Desktop</strong>, <strong>OpenCode</strong>, <strong>Codex</strong> y <strong>Antigravity</strong>. Con la app de escritorio, un botón configura cada uno. Con Docker, Claude Code y Codex tienen un comando; los otros tres piden pegar una configuración, y Rolboard te la arma. No está disponible en Android.",
+  "a.link.rolboard": "Rolboard",
+  "a.link.assistant": "Tu asistente",
+  "a.link.label": "Rolboard se conecta a tu asistente de IA por MCP",
+  "a.term.eyebrow": "Con Docker, en una terminal",
+  "a.term.label": "Comandos de ejemplo para conectar con Docker",
+  "a.m.command": "Comando",
+  "a.m.config": "Configuración lista",
+  "a.clients.lead":
+    "Con la app de escritorio, un botón conecta a cualquiera de ellos. Con Docker, algunos tienen un comando y otros piden pegar una configuración, que Rolboard te arma.",
+  "a.clients.android": "No está disponible en Android.",
   "a.limits.eyebrow": "Límites",
   "a.limits.title": "Qué puede y qué no puede hacer",
   "a.d1.title": "Lee casi todo",

@@ -348,8 +348,16 @@ export const en: Record<Key, string> = {
     "Ask about an NPC, ask for a recap of the last session or for help preparing the next one. The assistant reads your campaign and can leave new notes, NPCs, quests and lore.",
   "a.clients.eyebrow": "Clients",
   "a.clients.title": "Which programs it works with",
-  "a.clients.text":
-    "<strong>Claude Code</strong>, <strong>Claude Desktop</strong>, <strong>OpenCode</strong>, <strong>Codex</strong> and <strong>Antigravity</strong>. With the desktop app, a button sets each one up. With Docker, Claude Code and Codex have a command; the other three need a configuration pasted in, and Rolboard builds it for you. It isn't available on Android.",
+  "a.link.rolboard": "Rolboard",
+  "a.link.assistant": "Your assistant",
+  "a.link.label": "Rolboard connects to your AI assistant through MCP",
+  "a.term.eyebrow": "With Docker, in a terminal",
+  "a.term.label": "Example commands to connect with Docker",
+  "a.m.command": "Command",
+  "a.m.config": "Ready-made config",
+  "a.clients.lead":
+    "With the desktop app, one button connects any of them. With Docker, some have a command and others need a configuration pasted in, which Rolboard builds for you.",
+  "a.clients.android": "It isn't available on Android.",
   "a.limits.eyebrow": "Limits",
   "a.limits.title": "What it can and can't do",
   "a.d1.title": "Reads almost everything",
