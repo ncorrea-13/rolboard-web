@@ -367,12 +367,12 @@ export const es = {
   "a.android": "No está disponible en Android.",
   "a.limits.eyebrow": "Límites",
   "a.limits.title": "Qué puede y qué no puede hacer",
-  "a.d1.title": "Lee casi todo",
+  "a.d1.title": "Lee todo",
   "a.d1.text":
     "Fichas, sesiones, notas y secretos incluidos. Lo que lee viaja al servicio de IA que uses: si no quieres que un secreto salga de tu equipo, no conectes ese cliente.",
-  "a.d2.title": "Escribe poco",
+  "a.d2.title": "Crea y edita",
   "a.d2.text":
-    "Crea notas sueltas, NPCs, quests y entradas de lore, y edita la preparación de una sesión. No borra nada.",
+    "Crea y edita NPCs, quests, lore, objetos, sesiones, locaciones y más. No borra nada ni reindexa tu vault.",
   "a.d3.title": "Sin claves ni red pública",
   "a.d3.text":
     "En escritorio la conexión pasa por un socket local, solo para tu usuario. Con Docker usa el código de acceso de cada campaña: una conexión, una campaña.",

@@ -366,12 +366,12 @@ export const en: Record<Key, string> = {
   "a.android": "It isn't available on Android.",
   "a.limits.eyebrow": "Limits",
   "a.limits.title": "What it can and can't do",
-  "a.d1.title": "Reads almost everything",
+  "a.d1.title": "Reads everything",
   "a.d1.text":
     "Sheets, sessions, notes and secrets included. What it reads travels to the AI service you use: if you don't want a secret to leave your machine, don't connect that client.",
-  "a.d2.title": "Writes little",
+  "a.d2.title": "Creates and edits",
   "a.d2.text":
-    "It creates loose notes, NPCs, quests and lore entries, and edits a session's prep. It never deletes anything.",
+    "It creates and edits NPCs, quests, lore, items, sessions, locations and more. It never deletes anything or reindexes your vault.",
   "a.d3.title": "No keys, no public network",
   "a.d3.text":
     "On desktop the connection goes through a local socket, for your user only. With Docker it uses each campaign's access code: one connection, one campaign.",
