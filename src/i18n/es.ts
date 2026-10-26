@@ -376,6 +376,12 @@ export const es = {
   "a.d3.title": "Sin claves ni red pública",
   "a.d3.text":
     "En escritorio la conexión pasa por un socket local, solo para tu usuario. Con Docker usa el código de acceso de cada campaña: una conexión, una campaña.",
+  "a.opt.title": "Totalmente opcional",
+  "a.opt.text":
+    "Rolboard es el mismo con o sin esto. Si no te interesa, ignora esta página: no cambia nada de tu campaña.",
+  "a.opt.i1": "Apagado hasta que lo actives",
+  "a.opt.i2": "Cada persona elige en su equipo",
+  "a.opt.i3": "Se puede apagar en cualquier momento",
   "faq.agentsq": "¿Puedo usar un asistente de IA con mi campaña?",
   "faq.agentsa":
     'Sí, con cualquier programa que hable MCP: Claude, OpenCode, Codex y Antigravity, sin claves de API. Puede leer tu campaña y crear notas, NPCs, quests y lore, pero no borra nada. Los pasos están en la <a href="/agents">página de IA</a>.',
