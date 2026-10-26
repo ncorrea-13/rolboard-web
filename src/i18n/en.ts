@@ -366,15 +366,21 @@ export const en: Record<Key, string> = {
   "a.android": "It isn't available on Android.",
   "a.limits.eyebrow": "Limits",
   "a.limits.title": "What it can and can't do",
-  "a.d1.title": "Reads almost everything",
+  "a.d1.title": "Reads everything",
   "a.d1.text":
     "Sheets, sessions, notes and secrets included. What it reads travels to the AI service you use: if you don't want a secret to leave your machine, don't connect that client.",
-  "a.d2.title": "Writes little",
+  "a.d2.title": "Creates and edits",
   "a.d2.text":
-    "It creates loose notes, NPCs, quests and lore entries, and edits a session's prep. It never deletes anything.",
+    "It creates and edits NPCs, quests, lore, items, sessions, locations and more. It never deletes anything or reindexes your vault.",
   "a.d3.title": "No keys, no public network",
   "a.d3.text":
     "On desktop the connection goes through a local socket, for your user only. With Docker it uses each campaign's access code: one connection, one campaign.",
+  "a.opt.title": "Entirely optional",
+  "a.opt.text":
+    "Rolboard is the same with or without this. If it's not for you, skip this page: nothing about your campaign changes.",
+  "a.opt.i1": "Off until you turn it on",
+  "a.opt.i2": "Each person chooses for themselves",
+  "a.opt.i3": "Can be turned off at any time",
   "faq.agentsq": "Can I use an AI assistant with my campaign?",
   "faq.agentsa":
     'Yes, with any program that speaks MCP: Claude, OpenCode, Codex and Antigravity, with no API keys. It can read your campaign and create notes, NPCs, quests and lore, but it never deletes anything. The steps are on the <a href="/agents">AI page</a>.',
