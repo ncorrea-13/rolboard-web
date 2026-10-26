@@ -1,6 +1,7 @@
 import {
   BookOpen,
   CircleHelp,
+  Bot,
   Download,
   House,
   type LucideIcon,
@@ -9,7 +10,7 @@ import type { Key } from "./i18n/es.ts";
 
 export const ORIGIN = "https://rolboard.ncorrea.com.ar";
 
-export type PageId = "index" | "obsidian" | "faq" | "download";
+export type PageId = "index" | "obsidian" | "agents" | "faq" | "download";
 
 export interface PageInfo {
   id: PageId;
@@ -52,6 +53,16 @@ export const PAGES: PageInfo[] = [
     topNav: true,
   },
   {
+    id: "agents",
+    path: "/agents",
+    href: "/agents",
+    label: "nav.agents",
+    Icon: Bot,
+    metaTitle: "meta.agents.title",
+    metaDescription: "meta.agents.description",
+    topNav: true,
+  },
+  {
     id: "faq",
     path: "/faq",
     href: "/faq",
@@ -85,6 +96,12 @@ export const OBSIDIAN_SECTIONS: Anchor[] = [
   { label: "g.folders.eyebrow", href: "/obsidian#folders" },
   { label: "g.ex.eyebrow", href: "/obsidian#example" },
   { label: "g.det.eyebrow", href: "/obsidian#details" },
+];
+
+export const AGENTS_SECTIONS: Anchor[] = [
+  { label: "a.steps.eyebrow", href: "/agents#how-it-works" },
+  { label: "a.clients.eyebrow", href: "/agents#clients" },
+  { label: "a.limits.eyebrow", href: "/agents#limits" },
 ];
 
 export const FAQ_SECTIONS: Anchor[] = [

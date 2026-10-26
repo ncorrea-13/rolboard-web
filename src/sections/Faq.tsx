@@ -12,6 +12,7 @@ const QA: Qa[] = [
   ["faq.playersq", "faq.playersa"],
   ["faq.q2", "faq.a2"],
   ["faq.q4", "faq.a4"],
+  ["faq.agentsq", "faq.agentsa"],
 ];
 
 export function Faq() {

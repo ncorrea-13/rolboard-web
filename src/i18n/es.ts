@@ -325,6 +325,45 @@ export const es = {
   "g.more.text":
     "¿Quieres el detalle completo de cada clave y de cómo se resuelven los enlaces?",
   "g.more.link": "Leer la referencia técnica",
+  "meta.agents.title":
+    "Rolboard con IA: conecta Claude, OpenCode, Codex y Antigravity",
+  "meta.agents.description":
+    "Conecta tu campaña de Rolboard a un asistente de IA con MCP: que busque, resuma y te ayude a preparar sesiones. Sin claves de API. Funciona con Claude, OpenCode, Codex y Antigravity.",
+  "nav.agents": "IA",
+  "a.title": "Tu campaña, a la mano de tu asistente de IA.",
+  "a.lead":
+    "Rolboard habla MCP: Claude, OpenCode, Codex y Antigravity pueden buscar en tu campaña, resumir una sesión o ayudarte a preparar la siguiente. Sin claves de API ni cuentas nuevas.",
+  "a.cta.download": "Descargar Rolboard",
+  "a.cta.steps": "Ver cómo conectar",
+  "a.steps.eyebrow": "Cómo conectar",
+  "a.steps.title": "Dos caminos, según cómo uses Rolboard",
+  "a.s1.title": "Con la app de escritorio",
+  "a.s1.text":
+    "En <em>Ajustes de la app</em> activa <em>Permitir que agentes de IA se conecten</em> y pulsa <em>Conectar</em> en tu cliente. Rolboard se agrega solo a su configuración, y antes guarda una copia del archivo. Funciona mientras la app esté abierta.",
+  "a.s2.title": "Con un servidor Docker",
+  "a.s2.text":
+    "Descarga <code>rolboard-mcp</code> y ejecuta <code>rolboard-mcp login</code> una vez: pide el código de acceso de la campaña sin mostrarlo y lo guarda en tu equipo. Después, <em>Conectar un agente de IA</em>, en los ajustes de la campaña, arma el comando de cada cliente.",
+  "a.s3.title": "Pídele lo que necesites",
+  "a.s3.text":
+    "Pregunta por un NPC, pide el resumen de la última sesión o ayuda con la preparación de la próxima. El asistente lee tu campaña y puede dejar notas, NPCs, quests y lore nuevos.",
+  "a.clients.eyebrow": "Clientes",
+  "a.clients.title": "Con qué programas funciona",
+  "a.clients.text":
+    "<strong>Claude Code</strong>, <strong>Claude Desktop</strong>, <strong>OpenCode</strong>, <strong>Codex</strong> y <strong>Antigravity</strong>. Con la app de escritorio, un botón configura cada uno. Con Docker, Claude Code y Codex tienen un comando; los otros tres piden pegar una configuración, y Rolboard te la arma. No está disponible en Android.",
+  "a.limits.eyebrow": "Límites",
+  "a.limits.title": "Qué puede y qué no puede hacer",
+  "a.d1.title": "Lee casi todo",
+  "a.d1.text":
+    "Fichas, sesiones, notas y secretos incluidos. Lo que lee viaja al servicio de IA que uses: si no quieres que un secreto salga de tu equipo, no conectes ese cliente.",
+  "a.d2.title": "Escribe poco",
+  "a.d2.text":
+    "Crea notas sueltas, NPCs, quests y entradas de lore, y edita la preparación de una sesión. No borra nada.",
+  "a.d3.title": "Sin claves ni red pública",
+  "a.d3.text":
+    "En escritorio la conexión pasa por un socket local, solo para tu usuario. Con Docker usa el código de acceso de cada campaña: una conexión, una campaña.",
+  "faq.agentsq": "¿Puedo usar un asistente de IA con mi campaña?",
+  "faq.agentsa":
+    'Sí, con cualquier programa que hable MCP: Claude, OpenCode, Codex y Antigravity, sin claves de API. Puede leer tu campaña y crear notas, NPCs, quests y lore, pero no borra nada. Los pasos están en la <a href="/agents">página de IA</a>.',
 } as const;
 
 export type Key = keyof typeof es;
