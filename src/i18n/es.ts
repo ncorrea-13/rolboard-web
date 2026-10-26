@@ -380,7 +380,7 @@ export const es = {
   "a.opt.text":
     "Rolboard es el mismo con o sin esto. Si no te interesa, ignora esta página: no cambia nada de tu campaña.",
   "a.opt.i1": "Apagado hasta que lo actives",
-  "a.opt.i2": "Cada persona decide en su propia computadora",
+  "a.opt.i2": "Cada persona elige en su equipo",
   "a.opt.i3": "Se puede apagar en cualquier momento",
   "faq.agentsq": "¿Puedo usar un asistente de IA con mi campaña?",
   "faq.agentsa":

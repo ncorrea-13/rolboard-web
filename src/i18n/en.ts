@@ -379,7 +379,7 @@ export const en: Record<Key, string> = {
   "a.opt.text":
     "Rolboard is the same with or without this. If it's not for you, skip this page: nothing about your campaign changes.",
   "a.opt.i1": "Off until you turn it on",
-  "a.opt.i2": "Each person decides on their own computer",
+  "a.opt.i2": "Each person chooses for themselves",
   "a.opt.i3": "Can be turned off at any time",
   "faq.agentsq": "Can I use an AI assistant with my campaign?",
   "faq.agentsa":
