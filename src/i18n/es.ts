@@ -256,8 +256,7 @@ export const es = {
   "dl.server.note":
     "Para usarlo desde la tablet o el celular en la mesa, con clave de admin y código por campaña.",
   "dl.mcp.title": "Para conectar un asistente de IA",
-  "dl.mcp.lead":
-    "Une a tu asistente con el servidor. Solo para la versión Docker: la app de escritorio ya lo incluye.",
+  "dl.mcp.lead": "Solo para la versión de servidor.",
   "dl.mcp.linux.note": "Dale permiso de ejecución con <code>chmod +x</code>.",
   "dl.mcp.linux.btn": "Descargar rolboard-mcp para Linux",
   "dl.mcp.win.btn": "Descargar rolboard-mcp para Windows",
