@@ -375,6 +375,12 @@ export const en: Record<Key, string> = {
   "a.d3.title": "No keys, no public network",
   "a.d3.text":
     "On desktop the connection goes through a local socket, for your user only. With Docker it uses each campaign's access code: one connection, one campaign.",
+  "a.opt.title": "Entirely optional",
+  "a.opt.text":
+    "Rolboard is the same with or without this. If it's not for you, skip this page: nothing about your campaign changes.",
+  "a.opt.i1": "Off until you turn it on",
+  "a.opt.i2": "Each person decides on their own computer",
+  "a.opt.i3": "Can be turned off at any time",
   "faq.agentsq": "Can I use an AI assistant with my campaign?",
   "faq.agentsa":
     'Yes, with any program that speaks MCP: Claude, OpenCode, Codex and Antigravity, with no API keys. It can read your campaign and create notes, NPCs, quests and lore, but it never deletes anything. The steps are on the <a href="/agents">AI page</a>.',
