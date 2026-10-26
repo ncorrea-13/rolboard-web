@@ -258,7 +258,7 @@ export const en: Record<Key, string> = {
     "To use it from a tablet or phone at the table, with an admin key and a code per campaign.",
   "dl.mcp.title": "To connect an AI assistant",
   "dl.mcp.lead":
-    "The program that links your assistant (Claude, OpenCode, Codex, Antigravity) to the server. You only need it with the Docker version: the desktop app already includes the connection. You run <code>login</code> once and after that the assistant launches it.",
+    "Links your assistant to the server. Only for the Docker version: the desktop app already includes it.",
   "dl.mcp.linux.note": "Make it executable with <code>chmod +x</code>.",
   "dl.mcp.linux.btn": "Download rolboard-mcp for Linux",
   "dl.mcp.win.btn": "Download rolboard-mcp for Windows",
