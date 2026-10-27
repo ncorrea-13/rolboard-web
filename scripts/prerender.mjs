@@ -1,4 +1,5 @@
 // Writes one static HTML file per page from the built template, plus the sitemap and llms.txt.
+import { execSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFile, writeFile, rm } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -29,8 +30,17 @@ if (!headers.includes(`'sha256-${hash}'`))
     `_headers: CSP is missing 'sha256-${hash}' for the inline script`,
   );
 
+// Last commit date; no git (or no history) just means no <lastmod>.
+let lastmod = "";
+try {
+  const d = execSync("git log -1 --format=%cs", { cwd: root })
+    .toString()
+    .trim();
+  if (d) lastmod = `<lastmod>${d}</lastmod>`;
+} catch {}
+
 const urls = PAGES.map(
-  (p) => `  <url><loc>${ORIGIN}${p.path}</loc></url>`,
+  (p) => `  <url><loc>${ORIGIN}${p.path}</loc>${lastmod}</url>`,
 ).join("\n");
 await writeFile(
   resolve(root, "dist/sitemap.xml"),
