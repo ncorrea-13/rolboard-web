@@ -1,4 +1,6 @@
 // Writes one static HTML file per page from the built template, plus the sitemap and llms.txt.
+import { execSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { readFile, writeFile, rm } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -18,8 +20,27 @@ for (const page of PAGES) {
   await writeFile(resolve(root, "dist", file), renderPage(page.id, template));
 }
 
+// The CSP in public/_headers allows the inline <script> in index.html by hash; fail the build
+// when that script changes and the hash goes stale, instead of shipping a page that breaks.
+const inline = template.match(/<script>([\s\S]*?)<\/script>/)?.[1] ?? "";
+const hash = createHash("sha256").update(inline).digest("base64");
+const headers = await readFile(resolve(root, "dist/_headers"), "utf8");
+if (!headers.includes(`'sha256-${hash}'`))
+  throw new Error(
+    `_headers: CSP is missing 'sha256-${hash}' for the inline script`,
+  );
+
+// Last commit date; no git (or no history) just means no <lastmod>.
+let lastmod = "";
+try {
+  const d = execSync("git log -1 --format=%cs", { cwd: root })
+    .toString()
+    .trim();
+  if (d) lastmod = `<lastmod>${d}</lastmod>`;
+} catch {}
+
 const urls = PAGES.map(
-  (p) => `  <url><loc>${ORIGIN}${p.path}</loc></url>`,
+  (p) => `  <url><loc>${ORIGIN}${p.path}</loc>${lastmod}</url>`,
 ).join("\n");
 await writeFile(
   resolve(root, "dist/sitemap.xml"),

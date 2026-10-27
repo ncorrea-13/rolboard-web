@@ -12,9 +12,27 @@ export function fillTemplate(template: string, id: PageId): string {
     url: ORIGIN + page.path,
     page: id,
   };
-  return template.replace(/\{\{(\w+)\}\}/g, (_, k: string) =>
-    esc(values[k] ?? ""),
-  );
+  return template
+    .replace("<!--jsonld-->", () => (id === "index" ? jsonLd() : ""))
+    .replace(/\{\{(\w+)\}\}/g, (_, k: string) => esc(values[k] ?? ""));
+}
+
+function jsonLd(): string {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Rolboard",
+    description: es["meta.description"],
+    url: ORIGIN,
+    image: `${ORIGIN}/assets/og.png`,
+    applicationCategory: "GameApplication",
+    operatingSystem: "Windows, Linux, Android",
+    downloadUrl: `${ORIGIN}/download`,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+  // "<" escaped so no string in the data can close the script tag.
+  const json = JSON.stringify(data).replace(/</g, "\\u003c");
+  return `<script type="application/ld+json">${json}</script>`;
 }
 
 // Built from PAGES so a new page shows up without touching a file.
